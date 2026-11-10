@@ -3121,6 +3121,326 @@ footer.site-footer {
   background: var(--primary);
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAHANAND LUXURY UPGRADE — Premium Typography, Gold Accents, Animations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. LUXURY FONTS — Playfair Display for headings, Cormorant for elegance */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* 2. ENHANCED CSS VARIABLES */
+:root {
+  --gold: #C6A463;
+  --gold-light: #E8C97A;
+  --gold-dark: #9A7A3A;
+  --gold-gradient: linear-gradient(135deg, #C6A463 0%, #F5D99A 50%, #C6A463 100%);
+  --maroon-gradient: linear-gradient(135deg, #24050A 0%, #7A1C2E 50%, #5F1322 100%);
+  --luxury-shadow: 0 25px 60px rgba(122,28,46,0.15), 0 8px 20px rgba(122,28,46,0.08);
+  --gold-shadow: 0 8px 30px rgba(198,164,99,0.35);
+  --card-hover-shadow: 0 30px 70px rgba(122,28,46,0.18);
+}
+
+/* 3. GLOBAL BODY — refined background */
+body {
+  background: #FAF8F4 !important;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(122,28,46,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(198,164,99,0.04) 0%, transparent 60%) !important;
+}
+
+/* 4. HEADINGS — Playfair Display serif for luxury feel */
+h1, h2, h3, .hero-title, .section-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* 5. SECTION TITLES — gold underline accent */
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+}
+.section-title.left-align::after { left: 0; transform: none; }
+
+/* 6. SECTION TAG — luxury badge */
+.section-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  padding: 7px 18px !important;
+  border-radius: 50px !important;
+  background: linear-gradient(135deg, rgba(122,28,46,0.07), rgba(198,164,99,0.08)) !important;
+  border: 1px solid rgba(198,164,99,0.35) !important;
+  color: #7A1C2E !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+/* 7. NAVBAR — frosted glass luxury */
+header.site-header {
+  background: rgba(250,248,244,0.92) !important;
+  backdrop-filter: blur(20px) saturate(1.5) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.5) !important;
+  border-bottom: 1px solid rgba(198,164,99,0.25) !important;
+  box-shadow: 0 2px 30px rgba(122,28,46,0.07) !important;
+}
+
+.nav-link {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  color: #3A1218 !important;
+  position: relative;
+  transition: color 0.25s ease !important;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+
+/* 8. PRIMARY BUTTON — gold shimmer luxury */
+.btn-primary {
+  background: var(--maroon-gradient) !important;
+  border: 1px solid rgba(198,164,99,0.3) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 6px 24px rgba(122,28,46,0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -60%;
+  width: 40%; height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+.btn-primary:hover::after { left: 130%; }
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 36px rgba(122,28,46,0.4) !important;
+}
+
+/* 9. HERO SECTION enhancements */
+.hero-section {
+  min-height: 100svh !important;
+  position: relative;
+}
+.hero-pill-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  background: linear-gradient(135deg, rgba(198,164,99,0.18), rgba(198,164,99,0.08)) !important;
+  border: 1px solid rgba(198,164,99,0.5) !important;
+  color: #F5D99A !important;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.08 !important;
+}
+.hero-title span.glow {
+  background: var(--gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 0 20px rgba(198,164,99,0.5)) !important;
+}
+.hero-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  opacity: 0.88 !important;
+}
+
+/* 10. BOOKING CARD — luxury glass */
+.hero-booking-card {
+  background: rgba(255,255,255,0.97) !important;
+  border: 1px solid rgba(198,164,99,0.3) !important;
+  box-shadow: 0 30px 80px rgba(122,28,46,0.15), 0 0 0 1px rgba(198,164,99,0.1) !important;
+  border-radius: 24px !important;
+}
+
+/* 11. SECTION HEADERS — refined spacing */
+.section-header {
+  margin-bottom: 56px;
+}
+.section-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  line-height: 1.8 !important;
+  font-size: 16px !important;
+  color: #6E5359 !important;
+}
+
+/* 12. CARDS — luxury hover lift */
+.service-card, .work-card, .gallery-card, .step-card, .review-card, .vis-swatch-btn {
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1) !important;
+}
+.service-card:hover, .work-card:hover, .gallery-card:hover, .step-card:hover, .review-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--card-hover-shadow) !important;
+}
+
+/* 13. GALLERY SECTION — luxury grid */
+.gallery-section {
+  background: linear-gradient(180deg, #FAF8F4 0%, #F5EFE8 100%) !important;
+}
+.gallery-card {
+  border-radius: 18px !important;
+  overflow: hidden;
+  border: 1px solid rgba(198,164,99,0.2) !important;
+}
+.gallery-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 2px solid rgba(198,164,99,0);
+  transition: border-color 0.35s ease;
+  pointer-events: none;
+}
+.gallery-card:hover::after { border-color: rgba(198,164,99,0.6) !important; }
+
+/* 14. SECTION DIVIDERS — decorative gold line */
+.luxury-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin: 20px auto 0;
+  max-width: 220px;
+}
+.luxury-divider::before, .luxury-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-gradient);
+  opacity: 0.6;
+}
+.luxury-divider-diamond {
+  width: 7px; height: 7px;
+  background: var(--gold-gradient);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* 15. BRANDS TICKER — gold border */
+.brands-ticker {
+  border-top: 1px solid rgba(198,164,99,0.2) !important;
+  border-bottom: 1px solid rgba(198,164,99,0.2) !important;
+  background: linear-gradient(135deg, #24050A, #3D1018) !important;
+}
+.brand-pill {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+.brand-pill:hover {
+  color: #F5D99A !important;
+  transform: scale(1.05) !important;
+}
+
+/* 16. FOOTER — richer dark */
+footer, .site-footer {
+  background: linear-gradient(135deg, #24050A 0%, #1A040A 100%) !important;
+  border-top: 1px solid rgba(198,164,99,0.2) !important;
+}
+
+/* 17. FORM INPUTS — luxury */
+.form-input {
+  border: 1.5px solid rgba(122,28,46,0.15) !important;
+  border-radius: 12px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+  background: #FDFBFA !important;
+}
+.form-input:focus {
+  border-color: rgba(198,164,99,0.5) !important;
+  box-shadow: 0 0 0 3px rgba(198,164,99,0.12) !important;
+  outline: none !important;
+}
+
+/* 18. SCROLL REVEAL ANIMATION — smooth fade-up */
+@keyframes luxFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.section-header, .gallery-card, .service-card, .step-card, .review-card {
+  animation: luxFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* 19. MOBILE STICKY BAR */
+.mobile-sticky-bar {
+  box-shadow: 0 -4px 24px rgba(122,28,46,0.15) !important;
+  border-top: 1px solid rgba(198,164,99,0.2) !important;
+}
+
+/* 20. WHATSAPP FLOAT BUTTON */
+a[href*="whatsapp"] {
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+a[href*="whatsapp"]:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+  box-shadow: 0 10px 36px rgba(37,211,102,0.5) !important;
+}
+
+/* 21. REVIEW / TESTIMONIAL STARS */
+.review-stars, [class*="star"] {
+  color: var(--gold) !important;
+}
+
+/* 22. SMOOTH SCROLLBAR */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: #FAF8F4; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7A1C2E, #C6A463);
+  border-radius: 10px;
+}
+
+/* 23. SELECTION COLOR */
+::selection {
+  background: rgba(122,28,46,0.15);
+  color: #24050A;
+}
+
+/* 24. LUXURY SECTION TRANSITIONS */
+section { position: relative; }
+
+/* 25. ABOUT SECTION luxury refinement */
+#about { background: #FDFBFA !important; }
+#about .section-title { color: #24050A !important; }
+#about-grid .section-title::after { background: var(--gold-gradient) !important; }
+
 </style>
 </head>
 <body>
@@ -3208,6 +3528,10 @@ footer.site-footer {
 
 <!-- HERO SECTION (SAGE GREEN & IVORY LUXURY HERO) -->
 <section class="hero-section" id="hero">
+  <!-- Luxury gold orb decorations -->
+  <div style="position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(198,164,99,0.08) 0%,transparent 70%);pointer-events:none;z-index:1;border-radius:50%;"></div>
+  <div style="position:absolute;bottom:10%;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(122,28,46,0.08) 0%,transparent 70%);pointer-events:none;z-index:1;border-radius:50%;"></div>
+
   <div class="hero-backdrop-img" id="heroBg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=85');"></div>
   <div class="hero-gradient-overlay"></div>
 
@@ -3326,6 +3650,11 @@ footer.site-footer {
       <p class="section-desc" style="color:#555; max-width:640px; margin:0 auto;">
         Mumbai's most trusted painting & finishing specialists — bringing beauty, precision, and durability to every surface we touch.
       </p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div id="about-grid">
@@ -3728,6 +4057,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">We Paint Only With India's Top Certified Brands</h2>
       <p class="section-desc">At Mahanand Painters, we never use cheap sub-standard materials. We work directly with authorized depots of Asian Paints, Jotun, ICI Dulux, Birla Opus, Berger, and Dr. Fixit with verified batch authenticity.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="brands-grid">
@@ -3891,6 +4225,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">Know Your Exact Cost in 30 Seconds</h2>
       <p class="section-desc">Select your apartment layout, paint finish tier, and get an immediate ballpark estimate before your free on-site laser inspection.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="calculator-card">
@@ -4057,6 +4396,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">See Royal Maroon & Ivory on Your Living Room Wall</h2>
       <p class="section-desc">Test curated designer shades from the Mahanand Collection on this living room studio. Change finishes and sheens with a single tap.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="visualizer-grid">
@@ -4128,6 +4472,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">Designer Color Palettes in Royal Maroon & Ivory</h2>
       <p class="section-desc">Harmonious color combinations curated by Mahanand Painters, paired with delicate ivory trims and warm botanical undertones.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="palettes-grid">
@@ -4200,6 +4549,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">Swipe to See the Mahanand Difference</h2>
       <p class="section-desc">Drag the interactive slider below to see how our moisture-seal treatment and Royale Velvet coating bring tired spaces back to life.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <!-- Interactive Slider Container (Clean, Zero Text Collision) -->
@@ -4290,6 +4644,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">How Your Home Gets Painted In 4 Simple Steps</h2>
       <p class="section-desc">Experience a completely transparent, organized, and stress-free painting journey from booking to handover.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="process-steps-grid">
@@ -4350,6 +4709,11 @@ footer.site-footer {
       </span>
       <h2 class="section-title">Why Mahanand Beats Traditional Local Painters</h2>
       <p class="section-desc">Say goodbye to daily contractor arguments, sudden price escalations, and endless dust all over your furniture.</p>
+<div class="luxury-divider" style="display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:200px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#C6A463);opacity:0.6;"></div>
+        <div style="width:7px;height:7px;background:linear-gradient(135deg,#C6A463,#F5D99A);transform:rotate(45deg);flex-shrink:0;"></div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#C6A463);opacity:0.6;"></div>
+      </div>
     </div>
 
     <div class="comp-table-wrap">
@@ -4653,6 +5017,7 @@ footer.site-footer {
       </div>
     </div>
   </div>
+  <div style="height:1px;background:linear-gradient(to right,transparent,rgba(198,164,99,0.5),transparent);margin:0 40px;"></div>
 </footer>
 
 <!-- FLOATING WHATSAPP PILL -->
