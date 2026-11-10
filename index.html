@@ -3143,51 +3143,6 @@ footer.site-footer {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#our-works">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            Our Works 
-            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                <div>House Painting <small>Asian Royale, Jotun &amp; Birla</small></div>
-              </a>
-            </li>
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                <div>Wood &amp; PU Polish <small>Italian PU, Melamine, Veneer</small></div>
-              </a>
-            </li>
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-                <div>POP &amp; False Ceiling <small>Gypsum, cove lights &amp; punning</small></div>
-              </a>
-            </li>
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
-                <div>Wall Lamination &amp; Panels <small>PVC louvers, charcoal, wallpaper</small></div>
-              </a>
-            </li>
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                <div>Flooring Installation <small>Epoxy, wooden laminate &amp; tiles</small></div>
-              </a>
-            </li>
-            <li>
-              <a href="#our-works">
-                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-                <div>Deep Waterproofing <small>Dr. Fixit seepage barrier</small></div>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#about">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
             About Us
@@ -3373,7 +3328,7 @@ footer.site-footer {
       </p>
     </div>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+    <div id="about-grid">
       
       <!-- Left: About text cards -->
       <div style="display:flex; flex-direction:column; gap:20px;">
@@ -3405,7 +3360,7 @@ footer.site-footer {
           </ul>
         </div>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+        <div id="about-stats">
           <div style="background:#f9f4f5; border:1px solid rgba(122,28,46,0.15); border-radius:12px; padding:18px; text-align:center;">
             <div style="font-size:28px; font-weight:900; color:#7A1C2E;">10+</div>
             <div style="font-size:12px; color:#888; margin-top:4px;">Years Experience</div>
@@ -3448,7 +3403,7 @@ footer.site-footer {
       </div>
 
     <!-- Contact CTA strip -->
-    <div style="margin-top:48px; background:linear-gradient(135deg,#24050A,#7A1C2E); border-radius:16px; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div id="about-cta" style="margin-top:48px; background:linear-gradient(135deg,#24050A,#7A1C2E); border-radius:16px; padding:28px 32px;">
       <div>
         <h3 style="font-size:20px; font-weight:800; color:#F5D99A; margin:0 0 6px;">Ready to Transform Your Space?</h3>
         <p style="font-size:14px; color:rgba(255,255,255,0.75); margin:0;">📞 +91 97691 58622 &nbsp;|&nbsp; ✉ mahanandkumar0022@gmail.com &nbsp;|&nbsp; 📍 Mumbai, Navi Mumbai, Thane & Pune</p>
@@ -3463,14 +3418,42 @@ footer.site-footer {
 
 <!-- About section responsive CSS -->
 <style>
-@media (max-width: 768px) {
-  #about > .container > div:nth-child(2) {
+/* About section — full mobile responsiveness */
+#about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+#about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+#about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  #about-grid {
     grid-template-columns: 1fr !important;
+    gap: 28px !important;
   }
-  #about > .container > div:last-child {
-    flex-direction: column !important;
-    text-align: center;
+  #about-stats {
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
+}
+@media (max-width: 600px) {
+  #about { padding: 50px 0 44px !important; }
+  #about-grid { gap: 22px !important; }
+  #about-stats { grid-template-columns: 1fr 1fr 1fr !important; gap: 8px !important; }
+  #about-cta { flex-direction: column !important; text-align: center !important; }
+  #about-cta a { width: 100% !important; justify-content: center !important; }
+  #about .section-header { margin-bottom: 30px !important; }
+  #about video { max-height: 220px !important; }
 }
 </style>
 
@@ -3554,191 +3537,6 @@ footer.site-footer {
 
 <!-- 6 CORE SERVICES (RICH PHOTOGRAPHIC CARDS) -->
 <!-- ================= OUR WORKS: REAL SITE TRANSFORMATIONS ================= -->
-<section class="our-works-section" id="our-works">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">
-        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        PORTFOLIO &bull; REAL SITE WORKS
-      </span>
-      <h2 class="section-title">Our Works: Real Site Transformations By Mahanand Painters</h2>
-      <p class="section-desc">Explore actual projects executed by our master crew &mdash; featuring our signature House Painting, Italian PU Wood Polish, Designer POP False Ceilings, 3D Wall Lamination, and Luxury Flooring.</p>
-
-      <!-- Category Filter Pills -->
-      <div class="works-filter-bar">
-        <button type="button" class="works-filter-pill active" onclick="filterWorks('all', this)">All Real Works (10)</button>
-        <button type="button" class="works-filter-pill" onclick="filterWorks('living', this)">Living Rooms &amp; Lounges</button>
-        <button type="button" class="works-filter-pill" onclick="filterWorks('bedroom', this)">Bedrooms &amp; Suites</button>
-        <button type="button" class="works-filter-pill" onclick="filterWorks('pop', this)">POP &amp; False Ceilings</button>
-        <button type="button" class="works-filter-pill" onclick="filterWorks('panels', this)">Wall Lamination &amp; Panels</button>
-      </div>
-    </div>
-
-    <!-- Works Grid with Real Images -->
-    <div class="works-masonry-grid" id="worksGrid">
-      <!-- 1. Luxury Living Room -->
-      <div class="work-card" data-category="living">
-        <div class="work-img-box">
-          <img src="images/our-works/work-1-luxury-living-room.jpeg" alt="Luxury Living Room Project by Mahanand Painters" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">Complete Turnkey &bull; Paint + POP + Floor</span>
-            <h3 class="work-title">Grand Living Room &amp; Magnetic Track Lighting</h3>
-            <p class="work-desc">Paint: Asian Paints Royale Beige &bull; POP: Curved perimeter ceiling &bull; Floor: Seamless Italian marble</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20saw%20your%20Living%20Room%20Project%20(Work-1)%20and%20want%20a%20similar%20transformation." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. TV Wall Fluting & Lounge -->
-      <div class="work-card" data-category="living">
-        <div class="work-img-box">
-          <img src="images/our-works/work-2-living-tv-wall-fluting.jpeg" alt="TV Wall Fluting and Living Lounge" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">Lamination &bull; Vertical Fluted Panel</span>
-            <h3 class="work-title">TV Lounge with Fluted Wall &amp; LED Grooves</h3>
-            <p class="work-desc">Wall Lamination: Charcoal fluted louvers with warm ambient LED &bull; POP False Ceiling with track spotlights</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20like%20your%20TV%20Wall%20Fluting%20Project%20(Work-2)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Master Suite TV Panel -->
-      <div class="work-card" data-category="bedroom">
-        <div class="work-img-box">
-          <img src="images/our-works/work-3-master-bedroom-tv-panel.jpeg" alt="Master Suite TV Panel" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">POP + Polish &bull; Master Suite</span>
-            <h3 class="work-title">Master Bedroom TV Wall &amp; Glass Wardrobe</h3>
-            <p class="work-desc">Curved wave acoustic panel &bull; Wood veneer polishing &bull; Wooden rafter ceiling cove &bull; Vitrified tile flooring</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20a%20master%20bedroom%20setup%20like%20Work-3." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Bedroom 3D Accent Suite -->
-      <div class="work-card" data-category="bedroom">
-        <div class="work-img-box">
-          <img src="images/our-works/work-4-bedroom-3d-accent-suite.jpeg" alt="3D Geometric Accent Wall and Vanity Suite" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">3D Wall + PU Polish &bull; Full Suite</span>
-            <h3 class="work-title">3D Geometric Headboard &amp; Capsule Vanity</h3>
-            <p class="work-desc">Modular geometric relief tiles &bull; Teak veneer wood polish &bull; Backlit capsule vanity mirror &bull; POP spotlights</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20love%20the%20Bedroom%203D%20Suite%20(Work-4)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Bedroom TV Vanity Unit -->
-      <div class="work-card" data-category="bedroom">
-        <div class="work-img-box">
-          <img src="images/our-works/work-5-bedroom-tv-vanity-unit.jpeg" alt="Bedroom TV Vanity Unit" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">Wood Polish &bull; Custom Doors</span>
-            <h3 class="work-title">Teak Veneer TV Console &amp; Matching Door</h3>
-            <p class="work-desc">PU Italian wood polish on natural grain &bull; Fluted lamination &bull; Floating dual drawers &bull; Ivory wall paint</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20need%20wood%20polishing%20and%20console%20like%20Work-5." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Symmetrical Headboard Wall -->
-      <div class="work-card" data-category="bedroom">
-        <div class="work-img-box">
-          <img src="images/our-works/work-6-symmetrical-headboard-wall.jpeg" alt="Symmetrical Headboard Wall" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">POP + Polish + Floor</span>
-            <h3 class="work-title">Symmetrical Luxury Headboard &amp; Wardrobes</h3>
-            <p class="work-desc">Grid acoustic side paneling with cove lights &bull; Walnut wood polish pillars &bull; High-durability vitrified tile floor</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20this%20Headboard%20Design%20(Work-6)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Bedroom Perspective View -->
-      <div class="work-card" data-category="bedroom">
-        <div class="work-img-box">
-          <img src="images/our-works/work-7-bedroom-perspective-view.jpeg" alt="Bedroom Perspective View" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">Turnkey Master Suite</span>
-            <h3 class="work-title">Architectural Perspective &bull; Full Room</h3>
-            <p class="work-desc">Harmonious fusion of Asian Paints Royale matte paint, acoustic wall tiles, wooden doors, and seamless flooring</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20a%20full%20bedroom%20turnkey%20makeover%20like%20Work-7." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. POP False Ceiling & Lighting Plan -->
-      <div class="work-card" data-category="pop">
-        <div class="work-img-box">
-          <img src="images/our-works/work-8-pop-false-ceiling-lighting.jpeg" alt="POP False Ceiling and Lighting" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">POP Punning &bull; False Ceiling</span>
-            <h3 class="work-title">POP False Ceiling with Recessed Linear Spots</h3>
-            <p class="work-desc">Mirror-flat gypsum ceiling &bull; Embedded magnetic linear spotlight clusters &bull; Perimeter ambient warm cove glow</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20POP%20False%20Ceiling%20Work%20(Work-8)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. 3D Wave Wall Lamination -->
-      <div class="work-card" data-category="panels">
-        <div class="work-img-box">
-          <img src="images/our-works/work-9-3d-wave-wall-lamination.jpeg" alt="3D Wave Wall Lamination" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">Wall Lamination &bull; 3D Wave</span>
-            <h3 class="work-title">Curved 3D Wave Architectural Accent Wall</h3>
-            <p class="work-desc">Custom organic wave fluted lamination in warm ivory with vertical fluted side accents and ceiling spot wash</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20like%20the%203D%20Wave%20Wall%20Panel%20(Work-9)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. Geometric Relief Tiles -->
-      <div class="work-card" data-category="panels">
-        <div class="work-img-box">
-          <img src="images/our-works/work-10-geometric-relief-tiles.jpeg" alt="Geometric Relief Tiles Wall" class="work-img" loading="lazy">
-          <div class="work-overlay">
-            <span class="work-badge">3D Tiles &bull; Wood Polish Border</span>
-            <h3 class="work-title">Geometric Concave/Convex Relief Wall Art</h3>
-            <p class="work-desc">Precision fitted modular relief tiles bordered with natural grain walnut wood polished fluted side panels</p>
-            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20Geometric%20Relief%20Wall%20Art%20(Work-10)." class="work-cta" target="_blank">
-              Get Quote for Similar Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= GALLERY SECTION (ALL 10 REAL WORK SAMPLES) ================= -->
 <section class="gallery-section" id="gallery">
   <div class="container">
