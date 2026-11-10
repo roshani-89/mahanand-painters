@@ -3421,51 +3421,31 @@ footer.site-footer {
         </div>
       </div>
 
-      <!-- Right: Facebook video -->
+      <!-- Right: Local video -->
       <div>
-        <!-- Click-to-play card — works in all browsers without iframe blocking -->
-        <a href="https://www.facebook.com/share/v/1FL5BULn18/" target="_blank" rel="noopener"
-           style="display:block; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); border:2px solid rgba(245,217,154,0.3); text-decoration:none; cursor:pointer; position:relative; background:#1a1a2e;">
+        <div style="border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.25); border:2px solid rgba(122,28,46,0.2);">
           <!-- Header bar -->
-          <div style="background:rgba(255,255,255,0.08); padding:14px 20px; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.1);">
-            <svg viewBox="0 0 24 24" fill="#1877F2" width="22" height="22"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <div style="background:#7A1C2E; padding:14px 20px; display:flex; align-items:center; gap:10px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F5D99A" stroke-width="2" width="20" height="20"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
             <span style="font-size:14px; font-weight:700; color:#fff;">Mahanand Painters — Work Video</span>
-            <span style="margin-left:auto; font-size:11px; color:rgba(255,255,255,0.5); background:rgba(24,119,242,0.2); padding:3px 10px; border-radius:50px;">Facebook</span>
           </div>
-
-          <!-- Thumbnail area with maroon gradient + play icon -->
-          <div style="position:relative; padding-bottom:56.25%; background:linear-gradient(135deg,#24050A 0%,#5a1020 50%,#7A1C2E 100%);">
-            <!-- Work images collage as background feel -->
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-              <!-- Big play button -->
-              <div style="width:72px;height:72px;background:rgba(24,119,242,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(24,119,242,0.2);">
-                <svg viewBox="0 0 24 24" fill="#fff" width="32" height="32"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-              <div style="text-align:center;">
-                <div style="font-size:17px;font-weight:800;color:#fff;letter-spacing:0.5px;">Watch Our Work</div>
-                <div style="font-size:13px;color:rgba(255,255,255,0.65);margin-top:4px;">Click to open on Facebook</div>
-              </div>
-            </div>
-            <!-- Decorative corner elements -->
-            <div style="position:absolute;top:16px;left:16px;background:rgba(245,217,154,0.15);border:1px solid rgba(245,217,154,0.3);border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;color:#F5D99A;letter-spacing:1px;">LIVE VIDEO</div>
-          </div>
-
-          <!-- Footer -->
-          <div style="background:rgba(24,119,242,0.12); padding:14px 20px; display:flex; align-items:center; justify-content:space-between;">
-            <span style="font-size:13px; color:rgba(255,255,255,0.7);">Our real project work showcase</span>
-            <span style="font-size:13px; font-weight:700; color:#74b0ff; display:flex; align-items:center; gap:6px;">
-              Watch Now
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
+          <!-- Native HTML5 video player -->
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            style="width:100%; display:block; background:#111; max-height:340px; object-fit:cover;"
+            poster="">
+            <source src="images/mahanand-work.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <p style="text-align:center; font-size:12.5px; color:#aaa; margin-top:10px;">
-          Tap above to watch our work video on Facebook
+          Real project work by Mahanand Painters
         </p>
       </div>
-
-
 
     <!-- Contact CTA strip -->
     <div style="margin-top:48px; background:linear-gradient(135deg,#24050A,#7A1C2E); border-radius:16px; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
