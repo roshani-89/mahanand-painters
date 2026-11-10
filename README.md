@@ -1,6 +1,6 @@
 # Mahanand Painters – Premium Architectural & Color Atelier
 
-Official website for **Mahanand Painters**, offering high-end interior, exterior, waterproofing, and designer wall finishes.
+Official website for **Mahanand Painters**, offering high-end interior & exterior painting, wood/PU polish, POP & false ceiling, wall lamination/panels, flooring installation, waterproofing, and designer wall finishes.
 
 ## Features
 - **Official Brand Identity**: Mahanand Painters official logo with Sage Green & Ivory architectural theme.
@@ -21,4 +21,4 @@ Official website for **Mahanand Painters**, offering high-end interior, exterior
 ## Contact
 - **Hotline**: +91 97691 58622
 - **WhatsApp**: [Chat Directly](https://api.whatsapp.com/send?phone=919769158622)
-- **Email**: hello@mahanandpainters.com
+- **Email**: mahanandkumar0022@gmail.com
