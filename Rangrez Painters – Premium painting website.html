@@ -2734,6 +2734,152 @@ footer.site-footer {
   }
 }
 
+
+/* ================= OUR WORKS / REAL PROJECT GALLERY ================= */
+.our-works-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.works-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.works-filter-pill {
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1.5px solid var(--border-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.works-filter-pill:hover,
+.works-filter-pill.active {
+  background: var(--primary);
+  color: #FAF8F2;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(79, 114, 90, 0.35);
+}
+
+.works-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 40px;
+}
+@media (max-width: 992px) {
+  .works-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .works-masonry-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.work-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+.work-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #182C22;
+}
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+.work-card:hover .work-img {
+  transform: scale(1.06);
+}
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,28,20,0.1) 0%, rgba(15,28,20,0.85) 60%, rgba(15,28,20,0.96) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #FAF8F2;
+  opacity: 0.95;
+  transition: var(--transition);
+}
+.work-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: #FAF8F2;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+}
+.work-title {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  color: #FAF8F2;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+.work-desc {
+  font-size: 13px;
+  color: #CBE5D4;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.work-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #FAF8F2;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: var(--transition);
+  align-self: flex-start;
+  text-decoration: none;
+}
+.work-cta:hover {
+  background: var(--whatsapp);
+  color: #FFFFFF;
+  border-color: var(--whatsapp);
+  transform: translateY(-2px);
+}
+
 </style>
 </head>
 <body>
@@ -2778,44 +2924,44 @@ footer.site-footer {
 
       <ul class="nav-links">
         <li class="nav-item">
-          <a class="nav-link" href="#services">
+          <a class="nav-link" href="#our-works">
             <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            Services 
+            Our Works 
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
                 <div>House Painting <small>Asian Royale, Jotun &amp; Birla</small></div>
               </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 <div>Wood &amp; PU Polish <small>Italian PU, Melamine, Veneer</small></div>
               </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
                 <div>POP &amp; False Ceiling <small>Gypsum, cove lights &amp; punning</small></div>
               </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
                 <div>Wall Lamination &amp; Panels <small>PVC louvers, charcoal, wallpaper</small></div>
               </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                 <div>Flooring Installation <small>Epoxy, wooden laminate &amp; tiles</small></div>
               </a>
             </li>
             <li>
-              <a href="#services">
+              <a href="#our-works">
                 <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
                 <div>Deep Waterproofing <small>Dr. Fixit seepage barrier</small></div>
               </a>
@@ -3119,171 +3265,192 @@ footer.site-footer {
 </section>
 
 <!-- 6 CORE SERVICES (RICH PHOTOGRAPHIC CARDS) -->
-<!-- COMPREHENSIVE SERVICES SHOWCASE -->
-<section class="services-section" id="services">
+<!-- ================= OUR WORKS: REAL SITE TRANSFORMATIONS ================= -->
+<section class="our-works-section" id="our-works">
   <div class="container">
     <div class="section-header">
       <span class="section-tag">
         <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        COMPLETE INTERIOR &amp; EXTERIOR CRAFTSMANSHIP
+        PORTFOLIO &bull; REAL SITE WORKS
       </span>
-      <h2 class="section-title">Paint, Polish, POP, Lamination &amp; Flooring Under One Roof</h2>
-      <p class="section-desc">From luxury wall painting and Italian wood polishing to designer POP ceilings, modern wall lamination, and premium flooring installations — Mahanand Painters provides end-to-end turnkey craftsmanship.</p>
+      <h2 class="section-title">Our Works: Real Site Transformations By Mahanand Painters</h2>
+      <p class="section-desc">Explore actual projects executed by our master crew &mdash; featuring our signature House Painting, Italian PU Wood Polish, Designer POP False Ceilings, 3D Wall Lamination, and Luxury Flooring.</p>
+
+      <!-- Category Filter Pills -->
+      <div class="works-filter-bar">
+        <button type="button" class="works-filter-pill active" onclick="filterWorks('all', this)">All Real Works (10)</button>
+        <button type="button" class="works-filter-pill" onclick="filterWorks('living', this)">Living Rooms &amp; Lounges</button>
+        <button type="button" class="works-filter-pill" onclick="filterWorks('bedroom', this)">Bedrooms &amp; Suites</button>
+        <button type="button" class="works-filter-pill" onclick="filterWorks('pop', this)">POP &amp; False Ceilings</button>
+        <button type="button" class="works-filter-pill" onclick="filterWorks('panels', this)">Wall Lamination &amp; Panels</button>
+      </div>
     </div>
 
-    <div class="services-grid">
-      <!-- 1. Paint: Interior & Exterior Painting -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Interior & Exterior Painting" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            Painting &bull; Most Popular
-          </span>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">House Painting (Interior &amp; Exterior)</h3>
-          <p class="service-text">Ultra-smooth wall transformation using certified Asian Paints Royale, Jotun Fenomastic, ICI Dulux, and Birla Opus. Complete dust-free mechanized sanding, zero roller marks, and anti-bacterial washable sheens.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Asian Paints Royale, Jotun &amp; Birla Opus</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% Furniture &amp; Floor Masking Protection</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-Year Written Surface Warranty</li>
-          </ul>
-          <a href="#calculator" class="service-link">
-            Calculate Paint Cost 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+    <!-- Works Grid with Real Images -->
+    <div class="works-masonry-grid" id="worksGrid">
+      <!-- 1. Luxury Living Room -->
+      <div class="work-card" data-category="living">
+        <div class="work-img-box">
+          <img src="images/our-works/work-1-luxury-living-room.jpeg" alt="Luxury Living Room Project by Mahanand Painters" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">Complete Turnkey &bull; Paint + POP + Floor</span>
+            <h3 class="work-title">Grand Living Room &amp; Magnetic Track Lighting</h3>
+            <p class="work-desc">Paint: Asian Paints Royale Beige &bull; POP: Curved perimeter ceiling &bull; Floor: Seamless Italian marble</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20saw%20your%20Living%20Room%20Project%20(Work-1)%20and%20want%20a%20similar%20transformation." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 2. Polish: Wood & Furniture Polish -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" alt="Wood & Furniture Polish" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Wood Polish &bull; PU Finish
-          </span>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">Wood &amp; PU Furniture Polishing</h3>
-          <p class="service-text">Artisan polishing for natural teakwood, veneers, dining sets, modular wardrobes, and main doors. We specialize in Italian PU (polyurethane) dead-matt/high-gloss, Melamine, NC lacquer, and French polish.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Italian PU (Sirca / Asian Paints Woodtech)</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Scratch, Heat &amp; Water Resistant Coating</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Teak, Walnut &amp; Natural Veneer Restorations</li>
-          </ul>
-          <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20Wood%20and%20PU%20Furniture%20Polishing." class="service-link" target="_blank">
-            Book Polish Inspection 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      <!-- 2. TV Wall Fluting & Lounge -->
+      <div class="work-card" data-category="living">
+        <div class="work-img-box">
+          <img src="images/our-works/work-2-living-tv-wall-fluting.jpeg" alt="TV Wall Fluting and Living Lounge" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">Lamination &bull; Vertical Fluted Panel</span>
+            <h3 class="work-title">TV Lounge with Fluted Wall &amp; LED Grooves</h3>
+            <p class="work-desc">Wall Lamination: Charcoal fluted louvers with warm ambient LED &bull; POP False Ceiling with track spotlights</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20like%20your%20TV%20Wall%20Fluting%20Project%20(Work-2)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 3. PO / POP: Designer False Ceiling & POP Punning -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="POP & False Ceiling Work" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
-            POP &bull; False Ceiling
-          </span>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">POP Punning &amp; False Ceiling Work</h3>
-          <p class="service-text">Elevate your home aesthetics with architectural gypsum false ceilings and mirror-finish POP punning. Custom cove lighting channels, LED profile grooves, ornamental cornices, and sound-insulated ceiling panels.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Saint-Gobain Gyproc &amp; UltraTech POP</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Modern Cove &amp; Ambient Profile Light Slots</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Laser Level Dead-Flat Mirror Wall Punning</li>
-          </ul>
-          <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20POP%20and%20False%20Ceiling%20Work." class="service-link" target="_blank">
-            Book POP Consultation 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      <!-- 3. Master Suite TV Panel -->
+      <div class="work-card" data-category="bedroom">
+        <div class="work-img-box">
+          <img src="images/our-works/work-3-master-bedroom-tv-panel.jpeg" alt="Master Suite TV Panel" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">POP + Polish &bull; Master Suite</span>
+            <h3 class="work-title">Master Bedroom TV Wall &amp; Glass Wardrobe</h3>
+            <p class="work-desc">Curved wave acoustic panel &bull; Wood veneer polishing &bull; Wooden rafter ceiling cove &bull; Vitrified tile flooring</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20a%20master%20bedroom%20setup%20like%20Work-3." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 4. Liblation / Lamination: Wall Lamination, Panels & Wallpaper -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Wall Lamination & Panels" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
-            Wall Lamination &bull; Louvers
-          </span>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">Wall Lamination, Panels &amp; Wallpaper</h3>
-          <p class="service-text">Transform dull feature walls into modern architectural centerpieces. We install waterproof PVC fluted louvers, charcoal decorative panels, acoustic wall slats, and imported 3D textured wallpapers with seamless edge joints.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Waterproof &amp; Termite-Proof PVC Wall Lamination</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Charcoal Fluted Louvers &amp; TV Unit Backdrops</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Designer Imported Wallpapers &amp; 3D Murals</li>
-          </ul>
-          <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20Wall%20Lamination,%20Panels%20and%20Wallpaper." class="service-link" target="_blank">
-            Explore Lamination &amp; Panels 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      <!-- 4. Bedroom 3D Accent Suite -->
+      <div class="work-card" data-category="bedroom">
+        <div class="work-img-box">
+          <img src="images/our-works/work-4-bedroom-3d-accent-suite.jpeg" alt="3D Geometric Accent Wall and Vanity Suite" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">3D Wall + PU Polish &bull; Full Suite</span>
+            <h3 class="work-title">3D Geometric Headboard &amp; Capsule Vanity</h3>
+            <p class="work-desc">Modular geometric relief tiles &bull; Teak veneer wood polish &bull; Backlit capsule vanity mirror &bull; POP spotlights</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20love%20the%20Bedroom%203D%20Suite%20(Work-4)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 5. Floor: Flooring Installation & Refinishing -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80" alt="Flooring Installation & Refinishing" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            Flooring &bull; Epoxy &amp; Tiles
-          </span>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">Flooring Installation &amp; Refinishing</h3>
-          <p class="service-text">Complete flooring solutions including seamless 3D metallic epoxy coatings, wooden laminate &amp; vinyl plank installation, vitrified tile fitting with epoxy grouting, and Italian marble diamond mirror polishing.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Jointless Metallic &amp; Industrial Epoxy Flooring</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Wooden Laminate, SPC &amp; Vinyl Plank Fitting</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Italian Marble Diamond Polish &amp; Tile Grouting</li>
-          </ul>
-          <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20Flooring%20Installation%20and%20Polishing." class="service-link" target="_blank">
-            Book Flooring Quote 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      <!-- 5. Bedroom TV Vanity Unit -->
+      <div class="work-card" data-category="bedroom">
+        <div class="work-img-box">
+          <img src="images/our-works/work-5-bedroom-tv-vanity-unit.jpeg" alt="Bedroom TV Vanity Unit" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">Wood Polish &bull; Custom Doors</span>
+            <h3 class="work-title">Teak Veneer TV Console &amp; Matching Door</h3>
+            <p class="work-desc">PU Italian wood polish on natural grain &bull; Fluted lamination &bull; Floating dual drawers &bull; Ivory wall paint</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20need%20wood%20polishing%20and%20console%20like%20Work-5." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- 6. Waterproofing: Deep Seepage & Dampness Shield -->
-      <div class="service-card">
-        <div class="service-img-wrap">
-          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Deep Seepage Waterproofing" class="service-img">
-          <div class="service-overlay"></div>
-          <span class="service-tag-badge">
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-            Waterproofing &bull; Dr. Fixit
-          </span>
+      <!-- 6. Symmetrical Headboard Wall -->
+      <div class="work-card" data-category="bedroom">
+        <div class="work-img-box">
+          <img src="images/our-works/work-6-symmetrical-headboard-wall.jpeg" alt="Symmetrical Headboard Wall" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">POP + Polish + Floor</span>
+            <h3 class="work-title">Symmetrical Luxury Headboard &amp; Wardrobes</h3>
+            <p class="work-desc">Grid acoustic side paneling with cove lights &bull; Walnut wood polish pillars &bull; High-durability vitrified tile floor</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20this%20Headboard%20Design%20(Work-6)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="service-body">
-          <h3 class="service-title">Deep Seepage &amp; Waterproofing Seal</h3>
-          <p class="service-text">Permanent moisture protection using digital moisture-meters. We inject polymer crystalline sealant into masonry pores to eliminate terrace water ponding, bathroom leakage, white efflorescence, and peeling paint forever.</p>
-          <ul class="service-features">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Digital Moisture-Audit &amp; Leak Detection</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dr. Fixit Fastflex, Raincoat &amp; Crack-X Seal</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-Year Seepage Proofing Guarantee</li>
-          </ul>
-          <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20facing%20water%20seepage%20and%20dampness%20issues." class="service-link" target="_blank">
-            Book Moisture Inspection 
-            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+      </div>
+
+      <!-- 7. Bedroom Perspective View -->
+      <div class="work-card" data-category="bedroom">
+        <div class="work-img-box">
+          <img src="images/our-works/work-7-bedroom-perspective-view.jpeg" alt="Bedroom Perspective View" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">Turnkey Master Suite</span>
+            <h3 class="work-title">Architectural Perspective &bull; Full Room</h3>
+            <p class="work-desc">Harmonious fusion of Asian Paints Royale matte paint, acoustic wall tiles, wooden doors, and seamless flooring</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20a%20full%20bedroom%20turnkey%20makeover%20like%20Work-7." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. POP False Ceiling & Lighting Plan -->
+      <div class="work-card" data-category="pop">
+        <div class="work-img-box">
+          <img src="images/our-works/work-8-pop-false-ceiling-lighting.jpeg" alt="POP False Ceiling and Lighting" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">POP Punning &bull; False Ceiling</span>
+            <h3 class="work-title">POP False Ceiling with Recessed Linear Spots</h3>
+            <p class="work-desc">Mirror-flat gypsum ceiling &bull; Embedded magnetic linear spotlight clusters &bull; Perimeter ambient warm cove glow</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20am%20interested%20in%20POP%20False%20Ceiling%20Work%20(Work-8)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. 3D Wave Wall Lamination -->
+      <div class="work-card" data-category="panels">
+        <div class="work-img-box">
+          <img src="images/our-works/work-9-3d-wave-wall-lamination.jpeg" alt="3D Wave Wall Lamination" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">Wall Lamination &bull; 3D Wave</span>
+            <h3 class="work-title">Curved 3D Wave Architectural Accent Wall</h3>
+            <p class="work-desc">Custom organic wave fluted lamination in warm ivory with vertical fluted side accents and ceiling spot wash</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20like%20the%203D%20Wave%20Wall%20Panel%20(Work-9)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Geometric Relief Tiles -->
+      <div class="work-card" data-category="panels">
+        <div class="work-img-box">
+          <img src="images/our-works/work-10-geometric-relief-tiles.jpeg" alt="Geometric Relief Tiles Wall" class="work-img" loading="lazy">
+          <div class="work-overlay">
+            <span class="work-badge">3D Tiles &bull; Wood Polish Border</span>
+            <h3 class="work-title">Geometric Concave/Convex Relief Wall Art</h3>
+            <p class="work-desc">Precision fitted modular relief tiles bordered with natural grain walnut wood polished fluted side panels</p>
+            <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20want%20Geometric%20Relief%20Wall%20Art%20(Work-10)." class="work-cta" target="_blank">
+              Get Quote for Similar Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 <!-- ================= CERTIFIED BRAND PARTNERS SECTION ================= -->
@@ -4175,12 +4342,12 @@ footer.site-footer {
       <div class="footer-col">
         <h4>Painting Services</h4>
         <ul class="footer-links">
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>House Painting (Interior &amp; Exterior)</a></li>
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Wood &amp; PU Furniture Polish</a></li>
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>POP Punning &amp; False Ceiling</a></li>
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Wall Lamination, Panels &amp; Wallpaper</a></li>
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Flooring (Epoxy, Wooden &amp; Tile)</a></li>
-          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Deep Seepage Waterproofing</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>House Painting (Interior &amp; Exterior)</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Wood &amp; PU Furniture Polish</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>POP Punning &amp; False Ceiling</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Wall Lamination, Panels &amp; Wallpaper</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Flooring (Epoxy, Wooden &amp; Tile)</a></li>
+          <li><a href="#our-works"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Deep Seepage Waterproofing</a></li>
         </ul>
       </div>
 
@@ -4601,6 +4768,22 @@ function closeMobileDrawer() {
   document.body.style.overflow = '';
 }
 
+
+// Our Works Filter Logic
+function filterWorks(category, btn) {
+  document.querySelectorAll('.works-filter-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.work-card');
+  cards.forEach(card => {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
 </script>
 
 <!-- LUXURY MOBILE DRAWER NAVIGATION -->
@@ -4620,11 +4803,11 @@ function closeMobileDrawer() {
       <span>Architectural &bull; Sage Green &amp; Ivory Atelier</span>
     </div>
     <ul class="mobile-nav-links">
-      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Paint (Interior &amp; Exterior)</span></a></li>
-      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Wood &amp; PU Polish</span></a></li>
-      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg><span>POP &amp; False Ceiling</span></a></li>
-      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg><span>Wall Lamination &amp; Panels</span></a></li>
-      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Flooring (Epoxy &amp; Tile)</span></a></li>
+      <li><a href="#our-works" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Paint (Interior &amp; Exterior)</span></a></li>
+      <li><a href="#our-works" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>Wood &amp; PU Polish</span></a></li>
+      <li><a href="#our-works" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg><span>POP &amp; False Ceiling</span></a></li>
+      <li><a href="#our-works" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg><span>Wall Lamination &amp; Panels</span></a></li>
+      <li><a href="#our-works" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Flooring (Epoxy &amp; Tile)</span></a></li>
       <li><a href="#brands" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Certified Paint Brands</span></a></li>
       <li><a href="#calculator" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="14"/></svg><span>Paint Cost Calculator</span></a></li>
       <li><a href="#transformations" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" x2="21" y1="20" y2="3"/><polyline points="21 16 21 21 16 21"/></svg><span>Before &amp; After</span></a></li>
