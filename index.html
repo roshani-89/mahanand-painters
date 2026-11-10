@@ -1,0 +1,4632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mahanand Painters - Sage Green & Ivory Architectural Painting Atelier</title>
+<link rel="icon" type="image/png" href="mahanand-logo-trans.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ================= MAHANAND SAGE & IVORY PALETTE ================= */
+  --sage-primary: #4F725A;
+  --sage-hover: #3E5B47;
+  --sage-deep: #253C2E;
+  --sage-forest: #192B21;
+  --sage-light: #EBF2ED;
+  --sage-tint: #D8E6DC;
+  
+  --ivory-pure: #FFFFFF;
+  --ivory-warm: #FAF8F2;
+  --ivory-cream: #F5F1E6;
+  --ivory-border: #E5DECE;
+  --ivory-card: #FDFCF9;
+
+  /* UI Tokens */
+  --primary: var(--sage-primary);
+  --primary-hover: var(--sage-hover);
+  --primary-light: var(--sage-light);
+  --secondary: #487889;
+  --dark: var(--sage-forest);
+  --dark-surface: var(--sage-deep);
+  --text-main: #1C261F;
+  --text-muted: #596B5F;
+  --text-light: #8E9F93;
+  --bg-page: var(--ivory-warm);
+  --bg-card: var(--ivory-card);
+  --bg-subtle: var(--ivory-cream);
+  --border-light: var(--ivory-border);
+  --border-card: #DAD2C1;
+  --accent-gold: #C6A463;
+  --success: #15803D;
+  --whatsapp: #25D366;
+
+  /* Floral Petal Palette References */
+  --c-soft-beige: #F6E7CB;
+  --c-blush-pink: #E69288;
+  --c-lavender-mist: #BA9ECC;
+  --c-sky-blue: #98B6DC;
+  --c-ocean-teal: #487889;
+  --c-mint-green: #B9D4BF;
+  --c-cream-white: #FBE8D5;
+  --c-peach-sunset: #F59464;
+  --c-mocha-brown: #694241;
+  --c-dusty-rose: #9D4555;
+
+  --shadow-sm: 0 2px 6px rgba(25, 43, 33, 0.04);
+  --shadow-md: 0 10px 25px -4px rgba(25, 43, 33, 0.08), 0 6px 12px -4px rgba(25, 43, 33, 0.04);
+  --shadow-lg: 0 20px 40px -10px rgba(25, 43, 33, 0.12), 0 10px 20px -6px rgba(25, 43, 33, 0.06);
+  --shadow-xl: 0 30px 60px -15px rgba(25, 43, 33, 0.22);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg-page: #0F1712;
+  --bg-card: #17241D;
+  --bg-subtle: #1D2E25;
+  --text-main: #F4F8F5;
+  --text-muted: #9BB0A2;
+  --text-light: #6E8375;
+  --border-light: #25392D;
+  --border-card: #2D4436;
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.45);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.55);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.65);
+  --shadow-xl: 0 30px 60px rgba(0,0,0,0.75);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.svg-icon {
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ================= TOP ANNOUNCEMENT BAR ================= */
+.top-bar {
+  background: var(--dark);
+  color: #E2ECE5;
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.top-bar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(123, 170, 137, 0.2);
+  color: #B2D8C0;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(123, 170, 137, 0.35);
+}
+.top-bar-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.top-bar-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #D3DFD6;
+  font-weight: 600;
+}
+.top-bar-contact a:hover {
+  color: #FFFFFF;
+}
+
+/* ================= NAVIGATION BAR WITH OFFICIAL LOGO ================= */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 248, 242, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+[data-theme="dark"] header.site-header {
+  background: rgba(15, 23, 18, 0.96);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  gap: 24px;
+}
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.brand-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.brand-logo-wrap:hover .brand-logo-img {
+  transform: scale(1.03);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+}
+.nav-item {
+  position: relative;
+}
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.nav-link:hover {
+  color: var(--primary);
+}
+.nav-link svg.arrow {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+.nav-item:hover .nav-link svg.arrow {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -12px;
+  width: 285px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: var(--transition);
+  list-style: none;
+  z-index: 105;
+}
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.dropdown-menu li a:hover {
+  background: var(--bg-subtle);
+  color: var(--primary);
+}
+.dropdown-menu li a small {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--sage-light);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--sage-tint);
+}
+.nav-phone:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.theme-toggle-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: #182C22;
+  color: #FFFFFF;
+  padding: 70px 0 80px;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+}
+.hero-backdrop-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 60%;
+  transition: opacity 0.8s ease, transform 1s ease;
+  z-index: 1;
+}
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17,32,24,0.96) 0%, rgba(24,44,34,0.88) 46%, rgba(24,44,34,0.68) 100%);
+  z-index: 2;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 630px;
+}
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(250, 248, 242, 0.14);
+  border: 1px solid rgba(250, 248, 242, 0.28);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #CBE5D4;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+.hero-title {
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 900;
+  line-height: 1.08;
+  color: #FAF8F2;
+  letter-spacing: -0.03em;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+.hero-title span.glow {
+  color: #B2D8C0;
+  text-shadow: 0 0 35px rgba(178,216,192,0.45);
+}
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #E2ECE5;
+  line-height: 1.6;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #4F725A 0%, #3B5844 100%);
+  color: #FAF8F2;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 17px 34px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(79,114,90,0.5);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(79,114,90,0.65);
+}
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: rgba(250,248,242,0.12);
+  color: #FAF8F2;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 16px 28px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(250,248,242,0.35);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+.btn-outline-white:hover {
+  background: #FAF8F2;
+  color: var(--dark);
+  border-color: #FAF8F2;
+}
+
+.hero-highlights {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+.hero-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #E2ECE5;
+}
+.hero-highlight-item svg {
+  color: #B2D8C0;
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* ================= HERO BOOKING CARD ================= */
+.hero-booking-card {
+  background: rgba(253, 252, 249, 0.96);
+  border-radius: var(--radius-xl);
+  padding: 38px 34px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  color: var(--text-main);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ivory-border);
+  position: relative;
+  z-index: 6;
+}
+[data-theme="dark"] .hero-booking-card {
+  background: rgba(23, 36, 29, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.booking-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.booking-title {
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+.booking-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.form-input-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--primary);
+  pointer-events: none;
+}
+.form-input {
+  width: 100%;
+  height: 54px;
+  padding: 0 18px 0 48px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-card);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 15px;
+  font-weight: 500;
+  transition: var(--transition);
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79,114,90,0.18);
+}
+.phone-input-wrap {
+  display: flex;
+  gap: 10px;
+}
+.phone-prefix {
+  height: 54px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+.city-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234F725A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+  padding-right: 44px;
+}
+
+.btn-book-submit {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #4F725A 0%, #3B5844 100%);
+  color: #FAF8F2;
+  border: none;
+  font-size: 16.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(79,114,90,0.45);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.btn-book-submit:hover {
+  background: linear-gradient(135deg, #44644F 0%, #314A39 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(79,114,90,0.55);
+}
+
+.booking-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+.booking-guarantee svg {
+  color: var(--success);
+  width: 16px;
+  height: 16px;
+}
+
+/* ================= CLEANED FLORAL PETAL COLLECTION ================= */
+.floral-palette-section {
+  padding: 95px 0;
+  background: var(--ivory-warm);
+  border-bottom: 1px solid var(--border-light);
+}
+.floral-palette-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 50px;
+  align-items: center;
+}
+.floral-img-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+}
+.floral-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.floral-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(253, 252, 249, 0.92);
+  color: var(--sage-deep);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ivory-border);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.petals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+.petal-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.petal-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+.petal-pill.active {
+  border-color: var(--primary);
+  background: var(--sage-light);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.petal-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.petal-info {
+  display: flex;
+  flex-direction: column;
+}
+.petal-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.petal-hex {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* ================= PARTNER BRANDS TICKER ================= */
+.brands-ticker {
+  background: var(--ivory-cream);
+  border-bottom: 1px solid var(--border-light);
+  padding: 28px 0;
+}
+.ticker-title {
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.brands-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-main);
+  background: var(--bg-card);
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.brand-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.brand-pill svg {
+  color: var(--primary);
+  width: 18px;
+  height: 18px;
+}
+
+/* ================= KEY STATS ROW ================= */
+.stats-section {
+  padding: 60px 0;
+  background: var(--bg-page);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+.stat-card {
+  background: var(--bg-card);
+  padding: 32px 26px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--sage-light);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+}
+.stat-number {
+  font-size: clamp(36px, 3.8vw, 48px);
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.stat-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ================= SECTION HEADINGS ================= */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 55px;
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sage-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 900;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 16.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ================= 6 CORE SERVICES ================= */
+.services-section {
+  padding: 95px 0;
+  background: var(--ivory-cream);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.service-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--sage-tint);
+}
+.service-img-wrap {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #1E293B;
+}
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.service-card:hover .service-img {
+  transform: scale(1.08);
+}
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(25,43,33,0.6) 100%);
+}
+.service-tag-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(250, 248, 242, 0.94);
+  color: var(--sage-deep);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.service-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.service-text {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex: 1;
+}
+.service-features {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.service-features li svg {
+  color: var(--primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: auto;
+}
+.service-link:hover {
+  gap: 12px;
+}
+
+/* ================= INTERACTIVE PAINT CALCULATOR ================= */
+.calculator-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+}
+.calculator-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+}
+.calculator-controls {
+  padding: 48px 44px;
+}
+.calc-step-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.calc-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* BHK selector pills */
+.bhk-pills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 1.2fr;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.bhk-btn {
+  padding: 13px 10px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-card);
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.bhk-btn svg {
+  width: 20px;
+  height: 20px;
+}
+.bhk-btn:hover {
+  border-color: var(--primary);
+}
+.bhk-btn.active {
+  background: var(--primary);
+  color: #FAF8F2;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(79,114,90,0.35);
+}
+
+/* Slider */
+.slider-group {
+  margin-bottom: 32px;
+}
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.slider-val-badge {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary);
+  background: var(--sage-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+}
+.calc-range {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  outline: none;
+  background: var(--border-card);
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Finish options */
+.finish-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.finish-card {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-card);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.finish-card:hover {
+  border-color: var(--primary);
+}
+.finish-card.active {
+  border-color: var(--primary);
+  background: var(--sage-light);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+.finish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.finish-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.finish-rate {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.finish-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+/* Add-ons checkboxes */
+.addons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.addon-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+.addon-label:hover {
+  border-color: var(--primary);
+}
+.addon-label input {
+  accent-color: var(--primary);
+  width: 17px;
+  height: 17px;
+}
+.addon-label svg {
+  color: var(--primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Calculator summary panel */
+.calculator-summary {
+  background: linear-gradient(145deg, #1C2E24 0%, #294435 100%);
+  color: #FAF8F2;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.summary-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B2D8C0;
+  margin-bottom: 8px;
+}
+.summary-cost-label {
+  font-size: 14.5px;
+  color: #CBE5D4;
+  margin-bottom: 8px;
+}
+.summary-cost-value {
+  font-size: clamp(36px, 4.2vw, 50px);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.summary-inclusions {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin: 22px 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.summary-inclusions h5 {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.summary-inclusions ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.summary-inclusions li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #E2ECE5;
+}
+.summary-inclusions li svg {
+  color: #B2D8C0;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.summary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.btn-whatsapp-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--whatsapp);
+  color: #FFFFFF;
+  font-size: 15.5px;
+  font-weight: 800;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+  transition: var(--transition);
+}
+.btn-whatsapp-quote:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+}
+.btn-book-locked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-book-locked:hover {
+  background: #FFFFFF;
+  color: var(--dark);
+}
+
+/* ================= INTERACTIVE ROOM COLOR VISUALIZER ================= */
+.visualizer-section {
+  padding: 95px 0;
+  background: var(--ivory-cream);
+}
+.visualizer-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+}
+.visualizer-stage {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 3.2;
+  background: #4F725A;
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--border-light);
+  transition: background 0.6s ease;
+}
+.vis-wall {
+  position: absolute;
+  inset: 0;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+.vis-accent-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38%;
+  bottom: 24%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 14px, transparent 14px, transparent 28px);
+  border-right: 3px solid rgba(255,255,255,0.15);
+}
+.vis-floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24%;
+  background: #C4B5A2;
+  border-top: 14px solid #FAF8F2;
+  box-shadow: inset 0 6px 18px rgba(0,0,0,0.25);
+}
+.vis-sofa {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+  width: 58%;
+  height: 35%;
+  background: #253C2E;
+  border-radius: 24px 24px 10px 10px;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.4);
+}
+.vis-sofa::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4%;
+  right: -4%;
+  height: 60%;
+  background: #34523E;
+  border-radius: 16px;
+}
+.vis-pillow {
+  position: absolute;
+  bottom: 26%;
+  width: 14%;
+  height: 16%;
+  background: #FAF8F2;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.vis-pillow.p1 { right: 50%; transform: rotate(-8deg); }
+.vis-pillow.p2 { right: 14%; transform: rotate(10deg); }
+.vis-plant {
+  position: absolute;
+  left: 10%;
+  bottom: 14%;
+  width: 52px;
+  height: 120px;
+}
+.vis-plant .pot {
+  position: absolute;
+  bottom: 0;
+  width: 48px;
+  height: 48px;
+  background: #FAF8F2;
+  border-radius: 8px 8px 14px 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+.vis-plant .leaf1 {
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  width: 22px;
+  height: 70px;
+  background: #7BAA89;
+  border-radius: 50% 50% 10% 10%;
+  transform: rotate(-25deg);
+}
+.vis-plant .leaf2 {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 22px;
+  height: 80px;
+  background: #4F725A;
+  border-radius: 50% 50% 10% 10%;
+}
+.vis-plant .leaf3 {
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  width: 20px;
+  height: 65px;
+  background: #253C2E;
+  border-radius: 50% 50% 10% 10%;
+  transform: rotate(30deg);
+}
+.vis-stump {
+  position: absolute;
+  left: 26%;
+  bottom: 10%;
+  width: 46px;
+  height: 62px;
+  background: #5B4032;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.vis-live-pill {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(25, 43, 33, 0.75);
+  color: #FAF8F2;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+}
+.vis-live-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #B2D8C0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.visualizer-controls {
+  padding: 10px 0;
+}
+.vis-shade-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+.vis-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.vis-swatch-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid #FAF8F2;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+.vis-swatch-btn:hover {
+  transform: scale(1.15);
+}
+.vis-swatch-btn.active {
+  box-shadow: 0 0 0 3px var(--primary);
+  transform: scale(1.15);
+}
+
+.vis-selected-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.vis-color-name {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.vis-color-hex {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+.vis-sheen-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.vis-sheen-btn {
+  flex: 1;
+  padding: 11px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-card);
+  background: var(--bg-card);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+.vis-sheen-btn.active {
+  background: var(--dark);
+  color: #FAF8F2;
+  border-color: var(--dark);
+}
+
+/* ================= CURATED COLOR COMBINATIONS ================= */
+.palettes-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+}
+.palettes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.palette-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.palette-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.palette-swatches-strip {
+  display: flex;
+  height: 120px;
+}
+.palette-strip-color {
+  flex: 1;
+  position: relative;
+  transition: flex 0.3s ease;
+}
+.palette-strip-color:hover {
+  flex: 1.5;
+}
+.palette-content {
+  padding: 22px 20px;
+}
+.palette-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.palette-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.palette-btn {
+  width: 100%;
+  padding: 9px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.palette-btn:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+/* ================= INTERACTIVE BEFORE & AFTER SLIDER ================= */
+/* BEFORE & AFTER SLIDER (CLEAN, NO TEXT OVERLAP) */
+.before-after-section {
+  padding: 95px 0;
+  background: var(--ivory-cream);
+}
+.ba-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0F172A;
+  user-select: none;
+  cursor: ew-resize;
+}
+.ba-after-layer {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+}
+.ba-before-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  border-right: 4px solid #FAF8F2;
+  background: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+  filter: contrast(1.18) sepia(0.25) brightness(0.85);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.35);
+}
+
+/* Floating Badges with Crisp Glassmorphism */
+.ba-badge-before {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  background: rgba(24, 44, 34, 0.90);
+  color: #FAF8F2;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+}
+.ba-badge-after {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  background: rgba(79, 114, 90, 0.95);
+  color: #FAF8F2;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.ba-slider-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(24, 44, 34, 0.88);
+  color: #FAF8F2;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+  white-space: nowrap;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FAF8F2;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  cursor: ew-resize;
+  z-index: 10;
+  border: 3px solid var(--primary);
+  transition: transform 0.15s ease;
+}
+.ba-handle:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Comparison Cards Grid Below Slider (Zero Overlap) */
+.ba-comparison-grid {
+  max-width: 1040px;
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+@media (max-width: 768px) {
+  .ba-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ba-comparison-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ba-comparison-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.ba-comparison-card.after-card {
+  border-color: rgba(79, 114, 90, 0.45);
+  background: linear-gradient(145deg, #FDFCF9 0%, #EBF2ED 100%);
+}
+.ba-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.ba-card-title.before-title {
+  color: #B85042;
+}
+.ba-card-title.after-title {
+  color: var(--primary);
+}
+.ba-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ba-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.ba-point-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.ba-comparison-card.after-card .ba-point-item {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* ================= 4-STEP PROCESS ================= */
+.process-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+}
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+.process-card {
+  background: var(--bg-card);
+  padding: 36px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.process-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.process-step-num {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Outfit', sans-serif;
+  color: rgba(79, 114, 90, 0.28);
+  line-height: 1;
+}
+.process-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--sage-light);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+}
+.process-step-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.process-step-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ================= WHY US COMPARISON ================= */
+.comparison-section {
+  padding: 95px 0;
+  background: var(--ivory-cream);
+}
+.comp-table-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.comp-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  padding: 22px 30px;
+  border-bottom: 1px solid var(--border-light);
+  align-items: center;
+}
+.comp-row.comp-header {
+  background: var(--dark);
+  color: #FAF8F2;
+  font-size: 16px;
+  font-weight: 800;
+}
+.comp-row:last-child {
+  border-bottom: none;
+}
+.comp-feature {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comp-us {
+  color: var(--primary);
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.comp-them {
+  color: #EF4444;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ================= VERIFIED REVIEWS ================= */
+.testimonials-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.testimonial-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--accent-gold);
+  margin-bottom: 18px;
+}
+.testimonial-quote {
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.author-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F725A 0%, #7BAA89 100%);
+  color: #FAF8F2;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 17px;
+}
+.author-name {
+  font-size: 15.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.author-loc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ================= FAQ SECTION ================= */
+.faq-section {
+  padding: 95px 0;
+  background: var(--ivory-cream);
+}
+.faq-container {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.faq-question {
+  width: 100%;
+  padding: 22px 26px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-icon {
+  font-size: 22px;
+  color: var(--primary);
+  transition: transform 0.2s ease;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 26px;
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.faq-item.active .faq-answer {
+  padding-bottom: 22px;
+}
+
+/* ================= CTA BANNER ================= */
+.cta-banner {
+  background: linear-gradient(135deg, #4F725A 0%, #2A4434 100%);
+  color: #FAF8F2;
+  border-radius: var(--radius-xl);
+  padding: 64px 50px;
+  text-align: center;
+  margin: 40px auto;
+  box-shadow: 0 20px 50px rgba(79,114,90,0.4);
+}
+.cta-banner h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #FAF8F2;
+  margin-bottom: 16px;
+}
+.cta-banner p {
+  font-size: 17.5px;
+  color: #E2ECE5;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.btn-white {
+  background: #FAF8F2;
+  color: var(--sage-deep);
+  font-weight: 800;
+  padding: 17px 38px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-white:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ================= FOOTER WITH OFFICIAL LOGO ================= */
+footer.site-footer {
+  background: var(--dark);
+  color: #E2ECE5;
+  padding: 75px 0 35px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.footer-logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  background: rgba(255,255,255,0.92);
+  padding: 6px 14px;
+  border-radius: 12px;
+}
+.footer-brand p {
+  font-size: 14.5px;
+  color: #A3B8AB;
+  margin: 18px 0 22px;
+  line-height: 1.6;
+}
+.footer-col h4 {
+  color: #FAF8F2;
+  font-size: 16.5px;
+  margin-bottom: 20px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.footer-links a {
+  color: #A3B8AB;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 13.5px;
+  color: #7A9382;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ================= FLOATING ACTION BUTTONS ================= */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  background: var(--whatsapp);
+  color: #FFFFFF;
+  padding: 13px 22px 13px 16px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 14.5px;
+  box-shadow: 0 10px 28px rgba(37,211,102,0.5);
+  z-index: 99;
+  transition: var(--transition);
+}
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 34px rgba(37,211,102,0.65);
+}
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Modal Booking Dialog */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,25,19,0.75);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 490px;
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(20px);
+  transition: var(--transition);
+  border: 1px solid var(--border-light);
+}
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .calculator-card { grid-template-columns: 1fr; }
+  .floral-palette-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .palettes-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .visualizer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-actions .nav-phone { display: none; }
+  .hero-section { padding: 40px 0; }
+  .hero-title { font-size: 34px; }
+  .petals-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .palettes-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .calculator-controls { padding: 28px 20px; }
+  .calculator-summary { padding: 32px 20px; }
+  .bhk-pills { grid-template-columns: repeat(2, 1fr); }
+  .finish-options { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .comp-row { grid-template-columns: 1.2fr 1fr 1fr; padding: 14px; font-size: 13px; }
+}
+
+/* ================= CERTIFIED BRAND PARTNERS SECTION ================= */
+.brands-showcase-section {
+  padding: 95px 0;
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+@media (max-width: 992px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.brand-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.brand-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--sage-tint));
+  opacity: 0;
+  transition: var(--transition);
+}
+.brand-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.brand-card:hover::before {
+  opacity: 1;
+}
+.brand-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.brand-badge-pill {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--sage-light);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.brand-name {
+  font-size: 23px;
+  font-weight: 900;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.brand-sub {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.brand-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.brand-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+.brand-tag {
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--bg-subtle);
+  color: var(--text-dark);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+/* Material Authenticity Guarantee Strip */
+.material-guarantee-bar {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #182C22 0%, #2A4836 100%);
+  border-radius: var(--radius-lg);
+  padding: 26px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FAF8F2;
+  box-shadow: var(--shadow-lg);
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.guarantee-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.guarantee-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(250, 248, 242, 0.15);
+  display: grid;
+  place-items: center;
+  color: #FAF8F2;
+  flex-shrink: 0;
+}
+.guarantee-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.guarantee-desc {
+  font-size: 13.5px;
+  color: #CBE5D4;
+}
+.guarantee-badges {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.guarantee-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* ================= MOBILE RESPONSIVE LUXURY SYSTEM ================= */
+.mobile-nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.mobile-nav-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Mobile Drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: min(340px, 86vw);
+  background: var(--bg-card);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+.mobile-drawer.active {
+  right: 0;
+}
+.mobile-drawer-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+}
+.mobile-drawer-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.mobile-drawer-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex-grow: 1;
+}
+.mobile-drawer-tagline {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--sage-light);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+}
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+.mobile-nav-links a:hover,
+.mobile-nav-links a:active {
+  background: var(--sage-light);
+  color: var(--primary);
+}
+.mobile-nav-links svg {
+  color: var(--primary);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.mobile-drawer-cta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+.mobile-cta-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border-radius: var(--radius-md);
+  background: var(--sage-light);
+  color: var(--primary);
+  font-size: 14.5px;
+  font-weight: 800;
+  border: 1.5px solid var(--sage-tint);
+}
+.mobile-cta-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px;
+  border-radius: var(--radius-md);
+  background: var(--whatsapp);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+/* Sticky Bottom Luxury Conversion Bar */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(24, 44, 34, 0.94);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+  padding: 10px 14px;
+  z-index: 998;
+  gap: 8px;
+}
+.sticky-bar-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 46px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.sticky-bar-btn:active {
+  transform: scale(0.97);
+}
+.sticky-call {
+  background: rgba(250, 248, 242, 0.12);
+  color: #FAF8F2;
+  border: 1px solid rgba(250, 248, 242, 0.25);
+}
+.sticky-wa {
+  background: var(--whatsapp);
+  color: #FFFFFF;
+}
+.sticky-book {
+  background: linear-gradient(135deg, #4F725A 0%, #3B5844 100%);
+  color: #FAF8F2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 68px;
+  }
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+  .mobile-sticky-bar {
+    display: flex;
+  }
+  .floating-whatsapp {
+    bottom: 80px;
+    right: 18px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .floating-whatsapp svg {
+    width: 22px;
+    height: 22px;
+  }
+  .nav-cta {
+    display: none;
+  }
+  .site-header {
+    padding: 12px 0;
+  }
+  .brand-logo-img {
+    height: 48px;
+  }
+  .top-bar-contact {
+    display: none;
+  }
+  .top-bar .container {
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-section {
+    padding: 40px 0 50px;
+    min-height: auto;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-title {
+    font-size: clamp(28px, 7.5vw, 40px);
+    line-height: 1.14;
+    margin-bottom: 16px;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  .booking-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+  .booking-card h3 {
+    font-size: 22px;
+  }
+  .form-input {
+    font-size: 15px;
+    height: 48px;
+  }
+  .btn-book-submit {
+    height: 50px;
+    font-size: 15px;
+  }
+  .floral-palette-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .vis-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    padding: 22px 16px;
+  }
+  .stat-number {
+    font-size: 34px;
+  }
+  .ba-container {
+    aspect-ratio: 4 / 3;
+  }
+  .ba-badge-before {
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+  .ba-badge-after {
+    top: 12px;
+    right: 12px;
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+  .ba-slider-hint {
+    bottom: 12px;
+    padding: 5px 14px;
+    font-size: 11px;
+  }
+  .ba-handle {
+    width: 44px;
+    height: 44px;
+  }
+  .ba-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .calculator-card {
+    grid-template-columns: 1fr;
+  }
+  .bhk-pills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .addons-grid {
+    grid-template-columns: 1fr;
+  }
+  .comp-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comp-row {
+    min-width: 620px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
+  .material-guarantee-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 27px;
+  }
+  .petals-grid {
+    grid-template-columns: 1fr;
+  }
+  .brand-pill {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  .stat-card {
+    padding: 18px 12px;
+  }
+  .stat-number {
+    font-size: 28px;
+  }
+  .stat-label {
+    font-size: 13px;
+  }
+  .sticky-bar-btn {
+    font-size: 12px;
+    height: 44px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span class="top-bar-badge">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        4.9/5 RATED &bull; MAHANAND PAINTERS
+      </span>
+      <span>Sage Green & Ivory Atelier | 100% Dust-Free Vacuum Sanding | 5-Year Legal Warranty</span>
+    </div>
+    <div class="top-bar-contact">
+      <a href="tel:+919769158622">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Hotline: +91 97691 58622
+      </a>
+      <span style="opacity:0.4;">|</span>
+      <span>
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Mumbai, Navi Mumbai, Thane & Pune
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY SITE HEADER WITH USER'S OFFICIAL LOGO -->
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar">
+      <!-- User's Official Logo -->
+      <a href="#" class="brand-logo-wrap">
+        <img src="mahanand-logo-trans.png" alt="Mahanand Painters Logo" class="brand-logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Services 
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <div>Interior Home Painting <small>Royale Velvet Matte, Satin</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/></svg>
+                <div>Exterior Weatherproofing <small>Heat-reflective elastomeric</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+                <div>Deep Seepage Waterproofing <small>Digital moisture audit & seal</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg>
+                <div>Italian Textures & Stencils <small>Venetian plaster, Marmorino</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div>Wood & PU Polishing <small>Melamine, PU gloss & matte</small></div>
+              </a>
+            </li>
+            <li>
+              <a href="#services">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/></svg>
+                <div>Commercial & Turnkey Repaint <small>Night & weekend turnarounds</small></div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#floral-palette">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+            Floral Palette
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#brands">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Brands
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#calculator">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+            Cost Calculator
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#visualizer">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.7 1.7-1.6 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.7-1.7H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.5-10-8.5z"/></svg>
+            Room Visualizer
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#transformations">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" x2="21" y1="20" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" x2="21" y1="15" y2="21"/><line x1="4" x2="9" y1="4" y2="9"/></svg>
+            Before & After
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#process">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            How It Works
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#reviews">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Reviews
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+919769158622" class="nav-phone">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          97691 58622
+        </a>
+        <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Dark/Light Mode">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="btn-primary" onclick="openBookingModal()" style="padding:11px 22px; font-size:14px;">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          Book Site Visit
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SECTION (SAGE GREEN & IVORY LUXURY HERO) -->
+<section class="hero-section" id="hero">
+  <div class="hero-backdrop-img" id="heroBg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=85');"></div>
+  <div class="hero-gradient-overlay"></div>
+
+  <div class="container" style="width:100%;">
+    <div class="hero-grid">
+      <!-- Left side: Hero Typography & CTA -->
+      <div class="hero-content">
+        <div class="hero-pill-badge">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          MAHANAND PAINTERS &bull; SAGE & IVORY ATELIER
+        </div>
+        <h1 class="hero-title">
+          BEAUTIFUL INTERIORS START WITH <span class="glow">PERFECT PAINTING</span>
+        </h1>
+        <p class="hero-subtitle">
+          CURATING TIMELESS HOMES IN SAGE GREEN, ARCHITECTURAL IVORY & BOTANICAL FINISHES
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#calculator" class="btn-primary">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+            ESTIMATE PAINTING COST
+          </a>
+          <a href="#floral-palette" class="btn-outline-white">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+            EXPLORE SAGE & FLORAL PALETTE
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="hero-highlight-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% Dust-Free Vacuum Sanding</span>
+          </div>
+          <div class="hero-highlight-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dedicated Project Manager</span>
+          </div>
+          <div class="hero-highlight-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>5-Year Written Legal Warranty</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Hero Booking Card with Icons -->
+      <div class="hero-booking-card">
+        <div class="booking-header">
+          <h3 class="booking-title">BOOK SITE VISIT</h3>
+          <p class="booking-desc">Get a thorough Site Inspection and Colour Consultation from Our Experts</p>
+        </div>
+
+        <form class="booking-form" onsubmit="handleHeroBooking(event)">
+          <div class="form-input-wrap">
+            <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input type="text" id="heroName" class="form-input" placeholder="Your Name" required>
+          </div>
+
+          <div class="form-group phone-input-wrap">
+            <div class="phone-prefix">&#127470;&#127475; +91 &#9662;</div>
+            <input type="tel" id="heroPhone" class="form-input" style="padding-left:18px;" placeholder="Phone Number" pattern="[0-9]{10}" required>
+          </div>
+
+          <div class="form-input-wrap">
+            <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <select id="heroCity" class="form-input city-select" required>
+              <option value="Mumbai" selected>Mumbai</option>
+              <option value="Navi Mumbai">Navi Mumbai</option>
+              <option value="Thane">Thane</option>
+              <option value="Pune">Pune</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Delhi NCR">Delhi NCR</option>
+              <option value="Hyderabad">Hyderabad</option>
+            </select>
+          </div>
+
+          <div class="form-input-wrap">
+            <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <select id="heroProperty" class="form-input city-select">
+              <option value="Full House - Interior & Exterior">Full House (Interior & Exterior)</option>
+              <option value="1 BHK Interior">1 BHK Interior</option>
+              <option value="2 BHK Interior" selected>2 BHK Interior</option>
+              <option value="3 BHK Interior">3 BHK Interior</option>
+              <option value="4+ BHK / Villa">4+ BHK / Luxury Villa</option>
+              <option value="Commercial / Office Space">Commercial / Office Space</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-book-submit">
+            BOOK SITE INSPECTION 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+
+        <div class="booking-guarantee">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Free Laser Measurement &bull; Zero Obligation &bull; Instant WhatsApp Confirmation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE SECTION: CLEANED MAHANAND FLORAL PALETTE -->
+<section class="floral-palette-section" id="floral-palette">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+        TIMELESS SAGE GREEN & IVORY ATELIER
+      </span>
+      <h2 class="section-title">The Mahanand Botanical Petal Collection</h2>
+      <p class="section-desc">Anchored by soothing Sage Green and warm French Ivory, this 10-shade floral wheel brings timeless organic harmony and tranquility to your walls.</p>
+    </div>
+
+    <div class="floral-palette-grid">
+      <!-- Left: Cleaned, Cropped Flower Image -->
+      <div class="floral-img-card">
+        <img src="mahanand-palette-clean.jpg" alt="Mahanand Sage and Ivory Floral Palette">
+        <div class="floral-badge">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Mahanand Master Palette
+        </div>
+      </div>
+
+      <!-- Right: Interactive Petal Shade Selector -->
+      <div>
+        <h3 style="font-size:24px; font-weight:900; margin-bottom:8px;">Click Any Shade to Test Live on Wall:</h3>
+        <p style="font-size:14.5px; color:var(--text-muted); margin-bottom:20px;">
+          Select a shade to instantly visualize it on our living room wall studio, or request physical color patch samples during your free inspection.
+        </p>
+
+        <div class="petals-grid" id="petalsList">
+          <!-- Petals injected by JS -->
+        </div>
+
+        <div style="margin-top:24px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#visualizer" class="btn-primary" style="padding:14px 28px; font-size:14.5px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.7 1.7-1.6 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.7-1.7H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.5-10-8.5z"/></svg>
+            Open in Room Studio &rarr;
+          </a>
+          <button class="btn-outline-white" style="color:var(--text-main); border-color:var(--border-card); background:var(--bg-card);" onclick="openBookingModal()">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            Request Physical Shade Card
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND PARTNERS TICKER WITH ICONS -->
+<div class="brands-ticker">
+  <div class="container">
+    <div class="ticker-title">OFFICIAL APPLICATION PARTNERS & AUTHORISED MATERIAL SUPPLY</div>
+    <div class="brands-flex">
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Asian Paints Royale & SmartCare
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Jotun Paints Fenomastic
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        ICI Dulux Velvet Touch
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Birla Opus & Birla White
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Berger Silk Glamor
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Dr. Fixit Waterproofing
+      </div>
+      <div class="brand-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Nerolac Beauty Gold
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY STATS SECTION WITH ICONS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <div class="stat-number">12,500+</div>
+        <div class="stat-label">Homes Beautifully Painted</div>
+        <div class="stat-sub">Across Mumbai, Pune & Thane</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+        </div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Dust-Free Vacuum Sanding</div>
+        <div class="stat-sub">HEPA Vacuum Extractors</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="stat-number">5 Years</div>
+        <div class="stat-label">Workmanship Warranty</div>
+        <div class="stat-sub">Written Guarantee on Materials</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="stat-number">4.9 &#9733;</div>
+        <div class="stat-label">Google Review Rating</div>
+        <div class="stat-sub">From 1,850+ Verified Homeowners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 CORE SERVICES (RICH PHOTOGRAPHIC CARDS) -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        COMPREHENSIVE SURFACE SOLUTIONS
+      </span>
+      <h2 class="section-title">Everything Your Walls Deserve, Under One Roof</h2>
+      <p class="section-desc">From single accent wall makeovers to turnkey society & villa projects, our certified crew delivers flawless finishes with zero dust and total furniture masking.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Interior Painting -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Interior Painting" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Most Popular
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Interior Home Painting</h3>
+          <p class="service-text">Ultra-smooth walls with putty, primer and 2 precision coats of Royale Luxury Emulsion. 100% stain-resistant, anti-bacterial, washable finishes with low-VOC odor.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% Furniture & Floor Masking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Mechanized Vacuum Sanding</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-Year Peace-of-Mind Warranty</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Exterior Weatherproof -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Exterior Weatherproofing" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/></svg>
+            Weather-Shield
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Exterior Weatherproofing</h3>
+          <p class="service-text">Advanced elastomeric silicone coatings that resist harsh monsoons, heat cracks, and stubborn algae. Keeps building temperatures cooler while staying vibrant for years.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> UV-Reflective Heat Barrier</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Crack-Bridging Elasticity</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 7-Year Anti-Fungal Warranty</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Waterproofing Solutions -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Deep Waterproofing" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            Seepage Lock
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Deep Waterproofing</h3>
+          <p class="service-text">Moisture-meter diagnosis to detect hidden plumbing leaks and wall dampness. We inject nano-polymer barriers to eradicate seepage permanently before applying color.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Digital Moisture-Meter Audit</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Terrace & Bathroom Seepage Seal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero-Patch Leakage Guarantee</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Textures & Venetian Plaster -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Italian Textures" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 10 5-10 5L2 7z"/></svg>
+            Luxury Statement
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Italian Textures & Stencils</h3>
+          <p class="service-text">Turn plain walls into works of art. Hand-troweled Venetian marble plaster, rustic limewash, metallic accents, and bespoke geometric stencils for luxury living rooms.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Venetian Stucco & Marmorino</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Artisanal Limewash Mineral Coats</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 3D Wall Panels & Fluted Details</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Wood & Metal PU Polish -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" alt="Wood and PU Polishing" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+            Fine Finish
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Wood & PU Polishing</h3>
+          <p class="service-text">Restore natural wood grain with high-performance Italian PU (Polyurethane), melamine and lamination polish for doors, cabinetry, dining tables and antique furniture.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> High Gloss & Satin Matte PU</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Scratch & Heat Resistant Coats</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Anti-Rust Metal Gate Painting</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Commercial Turnkey Painting -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Commercial Turnkey Painting" class="service-img">
+          <div class="service-overlay"></div>
+          <span class="service-tag-badge">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/></svg>
+            Fast-Track
+          </span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Commercial & Turnkey Repainting</h3>
+          <p class="service-text">Offices, retail boutiques, clinics, and hospitality spaces. We execute weekend turnarounds and night shifts so your business operations never miss a beat.</p>
+          <ul class="service-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Weekend / Overnight Execution</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero Odor Low-VOC Formulation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Commercial BOQ & GST</li>
+          </ul>
+          <a href="#calculator" class="service-link">
+            Calculate Cost 
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= CERTIFIED BRAND PARTNERS SECTION ================= -->
+<section class="brands-showcase-section" id="brands">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        100% GENUINE PAINTS & MATERIALS
+      </span>
+      <h2 class="section-title">We Paint Only With India's Top Certified Brands</h2>
+      <p class="section-desc">At Mahanand Painters, we never use cheap sub-standard materials. We work directly with authorized depots of Asian Paints, Jotun, ICI Dulux, Birla Opus, Berger, and Dr. Fixit with verified batch authenticity.</p>
+    </div>
+
+    <div class="brands-grid">
+      <!-- 1. Asian Paints -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Authorised Applicators
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="brand-name">Asian Paints</div>
+        <div class="brand-sub">Royale Luxury, Apex Ultima & SmartCare</div>
+        <p class="brand-desc">India’s most celebrated wall coatings. Features Teflon surface protection, anti-fungal barrier, rich velvety matte sheens, and complete damp-proof primers.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Royale Luxury Matte</span>
+          <span class="brand-tag">Royale Aspira</span>
+          <span class="brand-tag">Apex Ultima</span>
+          <span class="brand-tag">SmartCare Damp Block</span>
+        </div>
+      </div>
+
+      <!-- 2. Jotun Paints -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Scandinavian Luxury
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="brand-name">Jotun Paints</div>
+        <div class="brand-sub">Fenomastic My Home & Lady Design</div>
+        <p class="brand-desc">Globally acclaimed Norwegian paint technology delivering rich chalky dead-matte finishes, zero-VOC odourless application, and unmatched Scandinavian color fidelity.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Fenomastic Rich Matt</span>
+          <span class="brand-tag">Fenomastic Pure Colors</span>
+          <span class="brand-tag">Lady Design</span>
+          <span class="brand-tag">Jotashield Extreme</span>
+        </div>
+      </div>
+
+      <!-- 3. ICI Dulux -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Global AkzoNobel
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="brand-name">ICI Dulux</div>
+        <div class="brand-sub">Velvet Touch & Weathershield</div>
+        <p class="brand-desc">Iconic British-heritage brand featuring Lumitec light-reflecting pigments, silky pearl-smooth touch, and elastomeric exterior coatings that stretch over hairline cracks.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Dulux Velvet Touch</span>
+          <span class="brand-tag">Dulux Promise</span>
+          <span class="brand-tag">Weathershield Max</span>
+          <span class="brand-tag">Aquatech Waterproof</span>
+        </div>
+      </div>
+
+      <!-- 4. Birla Opus & Birla White -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Aditya Birla Group
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div class="brand-name">Birla Opus & Birla White</div>
+        <div class="brand-sub">Calista Luxury & WallCare White Putty</div>
+        <p class="brand-desc">Engineered for absolute surface perfection. Birla White WallCare polymer putty creates a mirror-smooth foundation, coated with Birla Opus high-scrub luxury emulsions.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Birla White WallCare</span>
+          <span class="brand-tag">Birla Opus Calista</span>
+          <span class="brand-tag">Birla Opus Style</span>
+          <span class="brand-tag">Extocare Primer</span>
+        </div>
+      </div>
+
+      <!-- 5. Berger Paints -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Silk Luxury & Washability
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <div class="brand-name">Berger Paints</div>
+        <div class="brand-sub">Silk Glamor & WeatherCoat Long Life</div>
+        <p class="brand-desc">Formulated with metallic shimmer crystal polymers and Breathe Easy anti-pollution technology, offering superior stain resistance and durable high-sheen walls.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Silk Glamor</span>
+          <span class="brand-tag">WeatherCoat All Guard</span>
+          <span class="brand-tag">Breathe Easy</span>
+          <span class="brand-tag">Bison Acrylic Emulsion</span>
+        </div>
+      </div>
+
+      <!-- 6. Dr. Fixit & Pidilite -->
+      <div class="brand-card">
+        <div class="brand-card-top">
+          <span class="brand-badge-pill">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Specialist Waterproofing
+          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
+        <div class="brand-name">Dr. Fixit (Pidilite)</div>
+        <div class="brand-sub">Seepage Block, Crack-X & Fastflex</div>
+        <p class="brand-desc">The ultimate defense against monsoon dampness. Advanced crystalline coatings create an impenetrable barrier inside masonry pores, ending peeling paint forever.</p>
+        <div class="brand-tags">
+          <span class="brand-tag">Dr. Fixit Fastflex</span>
+          <span class="brand-tag">Raincoat Waterproof</span>
+          <span class="brand-tag">Crack-X Paste</span>
+          <span class="brand-tag">Primeseal Primer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Authenticity & Quality Guarantee Bar -->
+    <div class="material-guarantee-bar">
+      <div class="guarantee-left">
+        <div class="guarantee-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div>
+          <div class="guarantee-title">Mahanand 100% Genuine Materials Guarantee</div>
+          <div class="guarantee-desc">All paint buckets are sealed, direct from company depot, and opened in front of the homeowner.</div>
+        </div>
+      </div>
+      <div class="guarantee-badges">
+        <div class="guarantee-pill">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Direct Company Invoicing
+        </div>
+        <div class="guarantee-pill">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          QR Batch Authenticity Check
+        </div>
+        <div class="guarantee-pill">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Zero Thinner Adulteration
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE PAINTING COST CALCULATOR -->
+<section class="calculator-section" id="calculator">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+        INSTANT ESTIMATE ENGINE
+      </span>
+      <h2 class="section-title">Know Your Exact Cost in 30 Seconds</h2>
+      <p class="section-desc">Select your apartment layout, paint finish tier, and get an immediate ballpark estimate before your free on-site laser inspection.</p>
+    </div>
+
+    <div class="calculator-card">
+      <!-- Left Controls -->
+      <div class="calculator-controls">
+        <!-- Step 1: BHK Preset with Icons -->
+        <div class="calc-step-title">
+          <span class="calc-step-num">1</span> Select Property Configuration
+        </div>
+        <div class="bhk-pills">
+          <button type="button" class="bhk-btn" onclick="selectBhk(600, this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/></svg>
+            1 BHK
+          </button>
+          <button type="button" class="bhk-btn active" onclick="selectBhk(1050, this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            2 BHK
+          </button>
+          <button type="button" class="bhk-btn" onclick="selectBhk(1500, this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9M15 21V9"/></svg>
+            3 BHK
+          </button>
+          <button type="button" class="bhk-btn" onclick="selectBhk(2400, this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            4+ BHK
+          </button>
+          <button type="button" class="bhk-btn" onclick="selectBhk(3200, this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/></svg>
+            Villa / Office
+          </button>
+        </div>
+
+        <!-- Step 2: Area Slider -->
+        <div class="slider-group">
+          <div class="slider-header">
+            <span>Paintable Wall Area:</span>
+            <span class="slider-val-badge"><b id="sliderDisplay">1,050</b> sq ft</span>
+          </div>
+          <input type="range" min="300" max="6000" step="50" value="1050" class="calc-range" id="sqSlider" oninput="updateSlider(this.value)">
+        </div>
+
+        <!-- Step 3: Finish Tier -->
+        <div class="calc-step-title">
+          <span class="calc-step-num">2</span> Choose Paint Finish Tier
+        </div>
+        <div class="finish-options">
+          <div class="finish-card" onclick="selectFinish(16, 'Standard Emulsion', this)">
+            <div class="finish-header">
+              <span class="finish-name">Standard Emulsion</span>
+              <span class="finish-rate">&#8377;16/sq ft</span>
+            </div>
+            <div class="finish-desc">Asian Tractor / ICI Promise / Birla Prime &bull; Crisp refresh</div>
+          </div>
+
+          <div class="finish-card active" onclick="selectFinish(24, 'Royale Luxury Matte', this)">
+            <div class="finish-header">
+              <span class="finish-name">Royale Luxury Matte</span>
+              <span class="finish-rate">&#8377;24/sq ft</span>
+            </div>
+            <div class="finish-desc">Royale Aspira &bull; 100% Washable & Velvet sheen</div>
+          </div>
+
+          <div class="finish-card" onclick="selectFinish(38, 'Italian Stucco / Texture', this)">
+            <div class="finish-header">
+              <span class="finish-name">Venetian Texture</span>
+              <span class="finish-rate">&#8377;38/sq ft</span>
+            </div>
+            <div class="finish-desc">Hand-troweled Italian marble plaster</div>
+          </div>
+
+          <div class="finish-card" onclick="selectFinish(22, 'Exterior Weather-Shield', this)">
+            <div class="finish-header">
+              <span class="finish-name">Weather-Shield Exterior</span>
+              <span class="finish-rate">&#8377;22/sq ft</span>
+            </div>
+            <div class="finish-desc">Apex Ultima &bull; Anti-algae & silicone coat</div>
+          </div>
+        </div>
+
+        <!-- Step 4: Add-ons with Icons -->
+        <div class="calc-step-title">
+          <span class="calc-step-num">3</span> Optional Surface Add-Ons
+        </div>
+        <div class="addons-grid">
+          <label class="addon-label">
+            <input type="checkbox" id="addWaterproof" onchange="calculateCost()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            <span>Waterproofing Seal (+&#8377;3,500)</span>
+          </label>
+          <label class="addon-label">
+            <input type="checkbox" id="addCeiling" onchange="calculateCost()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="6" x="3" y="3" rx="2"/><path d="M12 9v12"/></svg>
+            <span>Ceiling Ultra-White (+&#8377;3,800)</span>
+          </label>
+          <label class="addon-label">
+            <input type="checkbox" id="addDoors" onchange="calculateCost()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2"/><circle cx="8" cy="12" r="1"/></svg>
+            <span>Door & Window PU Polish (+&#8377;4,800)</span>
+          </label>
+          <label class="addon-label">
+            <input type="checkbox" id="addDeepClean" checked onchange="calculateCost()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+            <span>Deep Dustless Cleaning (FREE)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Right Output Summary -->
+      <div class="calculator-summary">
+        <div>
+          <span class="summary-tag">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            ESTIMATED BALLPARK QUOTE
+          </span>
+          <div class="summary-cost-label">Total Estimated Cost (Material + Labor):</div>
+          <div class="summary-cost-value">
+            <span id="finalCostRange">&#8377;22,700 - &#8377;27,700</span>
+          </div>
+          <p style="font-size:13.5px; color:#CBE5D4;">
+            Includes 2 coats putty, 1 coat primer, 2 coats paint, complete furniture masking & mechanized dust extraction.
+          </p>
+
+          <div class="summary-inclusions">
+            <h5>What is Included in This Price:</h5>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% Furniture Covering with Plastic Drop-Sheets</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Vacuum-Assisted Mechanized Sanding (Zero Dust)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 5-Year Legal Written Warranty</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Supervisor & Daily WhatsApp Progress Updates</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="summary-actions">
+          <a id="whatsappQuoteBtn" href="#" class="btn-whatsapp-quote" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+            Send Estimate on WhatsApp
+          </a>
+          <button type="button" class="btn-book-locked" onclick="openBookingModalWithCost()">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Lock This Estimate & Book Free Inspection
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE ROOM COLOR VISUALIZER (DEFAULT: ATELIER SAGE & IVORY) -->
+<section class="visualizer-section" id="visualizer">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.7 1.7-1.6 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.7-1.7H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.5-10-8.5z"/></svg>
+        LIVE ROOM VISUALIZER
+      </span>
+      <h2 class="section-title">See Sage Green & Ivory on Your Living Room Wall</h2>
+      <p class="section-desc">Test curated designer shades from the Mahanand Collection on this living room studio. Change finishes and sheens with a single tap.</p>
+    </div>
+
+    <div class="visualizer-grid">
+      <!-- Visualizer Stage -->
+      <div class="visualizer-stage" id="visStage">
+        <div class="vis-wall" id="visWall" style="background-color: #4F725A;"></div>
+        <div class="vis-accent-pattern"></div>
+        <div class="vis-floor"></div>
+        <div class="vis-sofa" id="visSofa"></div>
+        <div class="vis-pillow p1"></div>
+        <div class="vis-pillow p2"></div>
+        <div class="vis-plant">
+          <div class="leaf1"></div>
+          <div class="leaf2"></div>
+          <div class="leaf3"></div>
+          <div class="pot"></div>
+        </div>
+        <div class="vis-stump"></div>
+
+        <div class="vis-live-pill">
+          <span class="dot"></span>
+          <span id="visPreviewLabel">Atelier Sage Green &bull; Royale Velvet</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="visualizer-controls">
+        <div class="vis-shade-title">1. Tap a Floral Petal Shade:</div>
+        <div class="vis-swatches" id="swatchList">
+          <!-- Swatches injected by JS -->
+        </div>
+
+        <div class="vis-selected-info">
+          <div>
+            <div class="vis-color-name" id="selectedColorName">Atelier Sage Green</div>
+            <div class="vis-color-hex" id="selectedColorHex">HEX: #4F725A &bull; Mahanand Signature Theme</div>
+          </div>
+          <div>
+            <input type="color" id="customColorPicker" value="#4F725A" onchange="setCustomColor(this.value)" style="width:44px; height:44px; border-radius:50%; border:none; cursor:pointer;" title="Choose Any Custom Color">
+          </div>
+        </div>
+
+        <div class="vis-shade-title">2. Choose Texture & Finish Sheen:</div>
+        <div class="vis-sheen-selector">
+          <button type="button" class="vis-sheen-btn active" onclick="setSheen('velvet', this)">Velvet Matte</button>
+          <button type="button" class="vis-sheen-btn" onclick="setSheen('satin', this)">Silk Satin</button>
+          <button type="button" class="vis-sheen-btn" onclick="setSheen('stucco', this)">Italian Stucco</button>
+          <button type="button" class="vis-sheen-btn" onclick="setSheen('limewash', this)">Limewash</button>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top:20px;">
+          <button class="btn-primary" onclick="openBookingModal()" style="flex:1; padding:15px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            Get Free Sample Patches on My Wall
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURATED COLOR COMBINATIONS -->
+<section class="palettes-section" id="palettes">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.7 1.7-1.6 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.7-1.7H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8.5-10-8.5z"/></svg>
+        CURATED COMBINATIONS
+      </span>
+      <h2 class="section-title">Designer Color Palettes in Sage Green & Ivory</h2>
+      <p class="section-desc">Harmonious color combinations curated by Mahanand Painters, paired with delicate ivory trims and warm botanical undertones.</p>
+    </div>
+
+    <div class="palettes-grid">
+      <!-- 1. Signature Sage & Ivory Sanctuary -->
+      <div class="palette-card">
+        <div class="palette-swatches-strip">
+          <div class="palette-strip-color" style="background:#4F725A;" title="Atelier Sage Green"></div>
+          <div class="palette-strip-color" style="background:#FAF8F2;" title="Warm French Ivory"></div>
+          <div class="palette-strip-color" style="background:#C4B5A2;" title="Linen Oak"></div>
+        </div>
+        <div class="palette-content">
+          <h4 class="palette-title">Sage & Ivory Sanctuary</h4>
+          <p class="palette-desc">Signature Atelier Sage Green framed with Warm French Ivory and linen accents.</p>
+          <button class="palette-btn" onclick="applyPaletteToVisualizer('#4F725A', 'Atelier Sage Green')">Try in Room Visualizer &rarr;</button>
+        </div>
+      </div>
+
+      <!-- 2. The Coastal Sanctuary -->
+      <div class="palette-card">
+        <div class="palette-swatches-strip">
+          <div class="palette-strip-color" style="background:#487889;" title="Ocean Teal"></div>
+          <div class="palette-strip-color" style="background:#98B6DC;" title="Sky Blue"></div>
+          <div class="palette-strip-color" style="background:#FBE8D5;" title="Cream White"></div>
+        </div>
+        <div class="palette-content">
+          <h4 class="palette-title">Coastal Sanctuary</h4>
+          <p class="palette-desc">Ocean Teal paired with soft Sky Blue and Cream White for breezy serenity.</p>
+          <button class="palette-btn" onclick="applyPaletteToVisualizer('#487889', 'Ocean Teal')">Try in Room Visualizer &rarr;</button>
+        </div>
+      </div>
+
+      <!-- 3. The Sunset Glow -->
+      <div class="palette-card">
+        <div class="palette-swatches-strip">
+          <div class="palette-strip-color" style="background:#F59464;" title="Peach Sunset"></div>
+          <div class="palette-strip-color" style="background:#F6E7CB;" title="Soft Beige"></div>
+          <div class="palette-strip-color" style="background:#694241;" title="Mocha Brown"></div>
+        </div>
+        <div class="palette-content">
+          <h4 class="palette-title">Sunset Glow</h4>
+          <p class="palette-desc">Radiant Peach Sunset grounded by warm Soft Beige and earthy Mocha Brown.</p>
+          <button class="palette-btn" onclick="applyPaletteToVisualizer('#F59464', 'Peach Sunset')">Try in Room Visualizer &rarr;</button>
+        </div>
+      </div>
+
+      <!-- 4. The Velvet Dusk -->
+      <div class="palette-card">
+        <div class="palette-swatches-strip">
+          <div class="palette-strip-color" style="background:#9D4555;" title="Dusty Rose"></div>
+          <div class="palette-strip-color" style="background:#E69288;" title="Blush Pink"></div>
+          <div class="palette-strip-color" style="background:#BA9ECC;" title="Lavender Mist"></div>
+        </div>
+        <div class="palette-content">
+          <h4 class="palette-title">Velvet Dusk</h4>
+          <p class="palette-desc">Opulent Dusty Rose and Blush Pink with ethereal Lavender Mist accents.</p>
+          <button class="palette-btn" onclick="applyPaletteToVisualizer('#9D4555', 'Dusty Rose')">Try in Room Visualizer &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE BEFORE & AFTER SLIDER -->
+<section class="before-after-section" id="transformations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" x2="21" y1="20" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" x2="21" y1="15" y2="21"/><line x1="4" x2="9" y1="4" y2="9"/></svg>
+        REAL TRANSFORMATIONS
+      </span>
+      <h2 class="section-title">Swipe to See the Mahanand Difference</h2>
+      <p class="section-desc">Drag the interactive slider below to see how our moisture-seal treatment and Royale Velvet coating bring tired spaces back to life.</p>
+    </div>
+
+    <!-- Interactive Slider Container (Clean, Zero Text Collision) -->
+    <div class="ba-container" id="baBox">
+      <!-- After Layer (Full width) -->
+      <div class="ba-after-layer">
+        <div class="ba-badge-after">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          AFTER: Mahanand Royale Finish
+        </div>
+      </div>
+
+      <!-- Before Layer (Clipped width) -->
+      <div class="ba-before-layer" id="baBefore">
+        <div class="ba-badge-before">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          BEFORE: Flaking, Seepage & Damp Stains
+        </div>
+      </div>
+
+      <!-- Bottom Hint -->
+      <div class="ba-slider-hint">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Drag slider left / right to compare</span>
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <!-- Drag Handle -->
+      <div class="ba-handle" id="baHandle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(6, 0)"/></svg>
+      </div>
+    </div>
+
+    <!-- Detailed Comparison Cards (Side-by-side with zero overlap) -->
+    <div class="ba-comparison-grid">
+      <div class="ba-comparison-card before-card">
+        <div class="ba-card-title before-title">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          Common Painting Issues Before
+        </div>
+        <ul class="ba-points-list">
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:#B85042;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+            <span><strong>Persistent Moisture Seepage:</strong> Monsoon dampness causing bubbly, peeling paint and fungal spots.</span>
+          </li>
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:#B85042;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+            <span><strong>Chalking & Efflorescence:</strong> White powdery patches, flaking coats, and yellowed contractor finishes.</span>
+          </li>
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:#B85042;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+            <span><strong>Rough Manual Sanding:</strong> Visible roller marks, dust accumulation, and uneven wall undulations.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ba-comparison-card after-card">
+        <div class="ba-card-title after-title">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 15 8 12"/></svg>
+          Mahanand Professional Transformation
+        </div>
+        <ul class="ba-points-list">
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Scientific Moisture Barrier:</strong> Deep penetrating polymer sealant stops capillary dampness permanently.</span>
+          </li>
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Mechanized Dust-Free Sanding:</strong> Vacuum-assisted Festool leveling creates mirror-smooth walls.</span>
+          </li>
+          <li class="ba-point-item">
+            <svg class="svg-icon" style="color:var(--primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Sage & Ivory Royale Luxury:</strong> 2 coats Asian Paints Royale with anti-bacterial shield & 5-year warranty.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4-STEP HASSLE-FREE PROCESS -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        ZERO HASSLE WORKFLOW
+      </span>
+      <h2 class="section-title">How Your Home Gets Painted In 4 Simple Steps</h2>
+      <p class="section-desc">Experience a completely transparent, organized, and stress-free painting journey from booking to handover.</p>
+    </div>
+
+    <div class="process-steps-grid">
+      <div class="process-card">
+        <div class="process-header-row">
+          <div class="process-step-num">01</div>
+          <div class="process-icon-wrap">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          </div>
+        </div>
+        <h3 class="process-step-title">Free Site Visit & Laser Audit</h3>
+        <p class="process-step-desc">Our expert visits with digital moisture meters & laser measuring tools to check wall health and provide an exact, zero-guesswork BOQ.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-header-row">
+          <div class="process-step-num">02</div>
+          <div class="process-icon-wrap">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/></svg>
+          </div>
+        </div>
+        <h3 class="process-step-title">100% Masking & Dust-Free Prep</h3>
+        <p class="process-step-desc">All furniture, floors, switchboards and electronics are taped and wrapped in thick drop-sheets. Sanding is done with vacuum extractors.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-header-row">
+          <div class="process-step-num">03</div>
+          <div class="process-icon-wrap">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+        </div>
+        <h3 class="process-step-title">Precision Paint Application</h3>
+        <p class="process-step-desc">Trained painters apply 2 coats putty, 1 coat primer and 2 coats of your chosen luxury emulsion under strict supervisor inspection.</p>
+      </div>
+
+      <div class="process-card">
+        <div class="process-header-row">
+          <div class="process-step-num">04</div>
+          <div class="process-icon-wrap">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+        <h3 class="process-step-title">Deep Cleaning & Warranty</h3>
+        <p class="process-step-desc">We peel all masking tapes, vacuum floors, clean spots, and hand over your house spotless with an official 5-year warranty certificate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US VS LOCAL CONTRACTORS -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        THE CLEAR ADVANTAGE
+      </span>
+      <h2 class="section-title">Why Mahanand Beats Traditional Local Painters</h2>
+      <p class="section-desc">Say goodbye to daily contractor arguments, sudden price escalations, and endless dust all over your furniture.</p>
+    </div>
+
+    <div class="comp-table-wrap">
+      <div class="comp-row comp-header">
+        <div>Service Feature</div>
+        <div>Mahanand Painters</div>
+        <div>Traditional Local Contractor</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+          Dust & Cleanup
+        </div>
+        <div class="comp-us">&#10004; 100% Dust-Free Vacuum Sanding</div>
+        <div class="comp-them">&#10006; Dust everywhere for days</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>
+          Furniture Protection
+        </div>
+        <div class="comp-us">&#10004; Complete Masking & Plastic Wrapping</div>
+        <div class="comp-them">&#10006; Old newspapers & paint drips</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21.5" x2="2.5" y1="2.5" y2="21.5"/></svg>
+          Measurement & Pricing
+        </div>
+        <div class="comp-us">&#10004; Laser Tape & Fixed Written BOQ</div>
+        <div class="comp-them">&#10006; Rough guesswork & surprise charges</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Supervision & Updates
+        </div>
+        <div class="comp-us">&#10004; Dedicated Site Manager & WhatsApp updates</div>
+        <div class="comp-them">&#10006; You have to supervise workers daily</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Written Warranty
+        </div>
+        <div class="comp-us">&#10004; Up to 5-Year Legal Guarantee</div>
+        <div class="comp-them">&#10006; Zero accountability once paid</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-feature">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          Completion Timeline
+        </div>
+        <div class="comp-us">&#10004; 100% On-Time Handover Guarantee</div>
+        <div class="comp-them">&#10006; Frequent delays & unannounced leaves</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFIED REVIEWS SECTION -->
+<section class="testimonials-section" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        VERIFIED HOMEOWNER STORIES
+      </span>
+      <h2 class="section-title">Families Who Love Their New Walls</h2>
+      <p class="section-desc">Read honest feedback from over 1,200+ residential and commercial painting projects completed across Maharashtra.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-quote">"Mahanand Painters completed our 3BHK in Hiranandani, Powai in exactly 5 days. Not a speck of dust remained on our leather couch or television. The Sage Green & Warm Ivory palette looks straight out of Architectural Digest!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div>
+            <div class="author-name">
+              Rohan & Sunita Mehta
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="author-loc">3 BHK Interior &bull; Powai, Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-quote">"We had chronic water seepage on our bedroom wall for three monsoons. Mahanand diagnosed the dampness with a moisture meter, sealed it with nano-polymer waterproofing, and repainted. Two monsoons later, it's 100% dry and spotless!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg, #4F725A 0%, #253C2E 100%);">P</div>
+          <div>
+            <div class="author-name">
+              Priya Nair
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="author-loc">Independent Villa &bull; Thane West</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-quote">"We needed our 3,400 sq ft BKC office repainted over a single long weekend. The Mahanand crew worked double shifts with zero odor low-VOC paint. We walked into a brand new office on Monday morning as promised."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg, #3E5B47 0%, #192B21 100%);">A</div>
+          <div>
+            <div class="author-name">
+              Arjun Singhania
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="author-loc">Corporate HQ &bull; BKC, Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+        CLEAR ANSWERS
+      </span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Got questions about our process, warranties or payments? Here are the most common queries answered.</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item active">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How does 100% dust-free mechanized painting work?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 200px;">
+          Traditional manual sandpaper sanding generates clouds of hazardous silica dust that enter wardrobes, AC vents, and electronics. Our crew uses industrial vacuum-connected eccentric sanders (HEPA filtration) that capture 99.7% of sanding dust right at the wall surface.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do I need to move or pack heavy furniture myself?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Not at all! Our trained team handles shifting furniture to the room center, covering sofas, tables, beds, and TVs with heavy-duty plastic masking film, and masking all electrical switchboards with specialty painter's tape. Once the job is done, we place everything back in its original position.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How is the exact paintable area calculated?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          During our free site visit, our technical supervisor uses digital Bosch laser distance meters to measure walls and ceilings precisely. We calculate the exact square footage and deduct large window/door openings so you never pay for unpainted space.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is covered under the 3-to-5-year warranty?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Our written warranty covers paint peeling, bubbling, flaking, and severe shade fading under normal residential use. In the rare event of a defect, our team re-preps and repaints the affected wall completely free of charge.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How long does it take to paint a 2BHK or 3BHK?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          A standard repainting refresh for a 2BHK typically takes 3 to 4 days. A complete full-prep 3BHK (putty, primer and 2 coats luxury emulsion) takes 5 to 7 days. We guarantee 100% on-time milestone delivery.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<div class="container">
+  <div class="cta-banner">
+    <h2>Ready to Give Your Walls a Stunning Makeover?</h2>
+    <p>Book a free on-site visit today. Our color specialist will inspect your walls with a moisture meter, provide digital 3D shade previews from our Sage Green & Ivory collection, and issue an instant itemized estimate.</p>
+    <div class="cta-actions">
+      <button class="btn-white" onclick="openBookingModal()">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Book Free Site Inspection
+      </button>
+      <a href="tel:+919769158622" class="btn-outline-white" style="border-color:#FAF8F2;">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call: +91 97691 58622
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER WITH OFFICIAL LOGO -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="mahanand-logo-trans.png" alt="Mahanand Painters" class="footer-logo-img">
+        <p>Sage Green & Ivory Color Atelier &bull; Premium home and commercial painting services delivering dust-free precision, certified master painters, and up to 5-year written warranty.</p>
+        <div style="display:flex; gap:12px;">
+          <span style="background:rgba(255,255,255,0.1); padding:6px 12px; border-radius:6px; font-size:12px; display:inline-flex; align-items:center; gap:6px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            ISO 9001:2015
+          </span>
+          <span style="background:rgba(255,255,255,0.1); padding:6px 12px; border-radius:6px; font-size:12px; display:inline-flex; align-items:center; gap:6px;">
+            <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Asian Paints Certified
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Painting Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Interior Home Painting</a></li>
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Exterior Weatherproofing</a></li>
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Deep Seepage Waterproofing</a></li>
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Italian Venetian Plaster</a></li>
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Wood & PU Furniture Polish</a></li>
+          <li><a href="#services"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Commercial & Turnkey Repaint</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Coverage Locations</h4>
+        <ul class="footer-links">
+          <li><a href="#"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Mumbai (South Mumbai to Borivali)</a></li>
+          <li><a href="#"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Navi Mumbai (Vashi to Panvel)</a></li>
+          <li><a href="#"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Thane & Ghodbunder Road</a></li>
+          <li><a href="#"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pune (Koregaon Park, Baner, Wakad)</a></li>
+          <li><a href="#"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bengaluru (Whitefield, Indiranagar)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Atelier</h4>
+        <p style="font-size:14px; color:#A3B8AB; margin-bottom:10px;">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+919769158622" style="color:#FAF8F2; text-decoration:none; font-weight:800;">+91 97691 58622</a><br>
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hello@mahanandpainters.com<br>
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          Mon - Sun: 8:00 AM - 9:00 PM
+        </p>
+        <p style="font-size:13px; color:#7A9382;">
+          Central Studio: Linking Road, Bandra West, Mumbai, MH 400050.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Mahanand Painters. All rights reserved.</div>
+      <div style="display:flex; gap:18px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Warranty Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP PILL -->
+<a href="https://api.whatsapp.com/send?phone=919769158622?text=Hi%20Mahanand%20Painters,%20I%20would%20like%20to%20get%20a%20free%20painting%20estimate%20and%20book%20a%20site%20visit." class="floating-whatsapp" target="_blank" aria-label="WhatsApp Us">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+  <span>WhatsApp Us</span>
+</a>
+
+<!-- SITE VISIT BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+    <div style="text-align:center; margin-bottom:20px;">
+      <span class="top-bar-badge" style="background:var(--sage-light); color:var(--primary);">&#9733; 100% FREE CONSULTATION</span>
+      <h3 style="font-size:24px; font-weight:900; margin-top:8px;">Schedule Free Site Visit</h3>
+      <p style="font-size:13.5px; color:var(--text-muted); margin-top:4px;" id="modalSubtitle">
+        Our supervisor visits with laser measuring tools & moisture meters.
+      </p>
+    </div>
+
+    <form onsubmit="handleModalSubmit(event)" style="display:flex; flex-direction:column; gap:14px;">
+      <div class="form-input-wrap">
+        <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <input type="text" id="modalName" class="form-input" placeholder="Your Full Name" required>
+      </div>
+      <div class="phone-input-wrap">
+        <div class="phone-prefix">&#127470;&#127475; +91</div>
+        <input type="tel" id="modalPhone" class="form-input" style="padding-left:18px;" placeholder="Phone Number" pattern="[0-9]{10}" required>
+      </div>
+      <div class="form-input-wrap">
+        <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <select id="modalCity" class="form-input city-select" required>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Navi Mumbai">Navi Mumbai</option>
+          <option value="Thane">Thane</option>
+          <option value="Pune">Pune</option>
+          <option value="Bengaluru">Bengaluru</option>
+          <option value="Delhi NCR">Delhi NCR</option>
+        </select>
+      </div>
+      <div class="form-input-wrap">
+        <svg class="form-input-icon svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        <input type="date" id="modalDate" class="form-input" required>
+      </div>
+      <button type="submit" class="btn-book-submit">
+        CONFIRM FREE INSPECTION 
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- JAVASCRIPT LOGIC -->
+<script>
+// Theme Switcher
+const themeToggle = document.getElementById('themeToggle');
+let isDark = false;
+themeToggle.onclick = () => {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeToggle.innerHTML = isDark ? 
+    '<svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" x2="12" y1="1" y2="3"/><line x1="12" x2="12" y1="21" y2="23"/><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"/><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"/><line x1="1" x2="3" y1="12" y2="12"/><line x1="21" x2="23" y1="12" y2="12"/><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"/><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"/></svg>' : 
+    '<svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+};
+
+// 10 Floral Petal Colors from User's Palette + Signature Sage Green
+const floralShades = [
+  { name: "Atelier Sage Green", hex: "#4F725A", desc: "Signature calming botanical sage" },
+  { name: "Soft Beige", hex: "#F6E7CB", desc: "Creamy warm linen ivory" },
+  { name: "Blush Pink", hex: "#E69288", desc: "Romantic warm coral rose" },
+  { name: "Mint Green", hex: "#B9D4BF", desc: "Fresh organic botanical mint" },
+  { name: "Cream White", hex: "#FBE8D5", desc: "Delicate warm butter cream" },
+  { name: "Peach Sunset", hex: "#F59464", desc: "Warm glowing apricot peach" },
+  { name: "Ocean Teal", hex: "#487889", desc: "Rich deep ocean slate teal" },
+  { name: "Sky Blue", hex: "#98B6DC", desc: "Calm serene powdery sky" },
+  { name: "Lavender Mist", hex: "#BA9ECC", desc: "Ethereal soothing pastel lilac" },
+  { name: "Dusty Rose", hex: "#9D4555", desc: "Sophisticated vintage mauve" },
+  { name: "Mocha Brown", hex: "#694241", desc: "Rich earthy velvet cocoa" }
+];
+
+// Populate Petals Grid in Floral Section
+const petalsList = document.getElementById('petalsList');
+floralShades.forEach((shade, i) => {
+  const item = document.createElement('div');
+  item.className = 'petal-pill' + (i === 0 ? ' active' : '');
+  item.innerHTML = 
+    '<div class="petal-swatch" style="background-color:' + shade.hex + ';"></div>' +
+    '<div class="petal-info">' +
+      '<span class="petal-name">' + shade.name + '</span>' +
+      '<span class="petal-hex">' + shade.hex + ' &bull; ' + shade.desc + '</span>' +
+    '</div>';
+  item.onclick = () => {
+    document.querySelectorAll('.petal-pill').forEach(p => p.classList.remove('active'));
+    item.classList.add('active');
+    setRoomColor(shade.hex, shade.name, shade.desc);
+    highlightSwatch(shade.hex);
+  };
+  petalsList.appendChild(item);
+});
+
+// Room Visualizer Swatches
+const swatchList = document.getElementById('swatchList');
+floralShades.forEach((shade, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'vis-swatch-btn' + (i === 0 ? ' active' : '');
+  btn.style.backgroundColor = shade.hex;
+  btn.title = shade.name;
+  btn.onclick = () => {
+    document.querySelectorAll('.vis-swatch-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    setRoomColor(shade.hex, shade.name, shade.desc);
+    highlightPetal(shade.hex);
+  };
+  swatchList.appendChild(btn);
+});
+
+function highlightSwatch(hex) {
+  document.querySelectorAll('.vis-swatch-btn').forEach(b => {
+    b.classList.toggle('active', b.title.toLowerCase() === document.getElementById('selectedColorName').textContent.toLowerCase());
+  });
+}
+
+function highlightPetal(hex) {
+  document.querySelectorAll('.petal-pill').forEach(p => {
+    const name = p.querySelector('.petal-name').textContent;
+    p.classList.toggle('active', name.toLowerCase() === document.getElementById('selectedColorName').textContent.toLowerCase());
+  });
+}
+
+function setRoomColor(hex, name, desc) {
+  document.getElementById('visWall').style.backgroundColor = hex;
+  document.getElementById('selectedColorName').textContent = name;
+  document.getElementById('selectedColorHex').textContent = 'HEX: ' + hex + ' \u2022 ' + desc;
+  document.getElementById('visPreviewLabel').textContent = name + ' \u2022 Royale Velvet';
+}
+
+function setCustomColor(hex) {
+  setRoomColor(hex, "Custom Shade", "Personal Selection");
+}
+
+function applyPaletteToVisualizer(hex, name) {
+  setRoomColor(hex, name, "Mahanand Curated Theme");
+  document.getElementById('visualizer').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setSheen(sheen, btn) {
+  document.querySelectorAll('.vis-sheen-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const wall = document.getElementById('visWall');
+  if (sheen === 'velvet') {
+    wall.style.filter = 'brightness(1)';
+    wall.style.opacity = '1';
+  } else if (sheen === 'satin') {
+    wall.style.filter = 'brightness(1.08) contrast(1.05)';
+  } else if (sheen === 'stucco') {
+    wall.style.filter = 'contrast(1.15) brightness(0.96)';
+  } else if (sheen === 'limewash') {
+    wall.style.filter = 'brightness(1.1) saturate(0.9)';
+  }
+}
+
+// Calculator State
+let currentArea = 1050;
+let currentRate = 24;
+let currentFinishName = "Royale Luxury Matte";
+
+function selectBhk(area, btn) {
+  currentArea = area;
+  document.getElementById('sqSlider').value = area;
+  document.getElementById('sliderDisplay').textContent = area.toLocaleString('en-IN');
+  document.querySelectorAll('.bhk-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calculateCost();
+}
+
+function updateSlider(val) {
+  currentArea = +val;
+  document.getElementById('sliderDisplay').textContent = (+val).toLocaleString('en-IN');
+  document.querySelectorAll('.bhk-btn').forEach(b => b.classList.remove('active'));
+  calculateCost();
+}
+
+function selectFinish(rate, name, card) {
+  currentRate = rate;
+  currentFinishName = name;
+  document.querySelectorAll('.finish-card').forEach(c => c.classList.remove('active'));
+  card.classList.add('active');
+  calculateCost();
+}
+
+function calculateCost() {
+  let baseCost = currentArea * currentRate;
+  let addOns = 0;
+  if (document.getElementById('addWaterproof').checked) addOns += 3500;
+  if (document.getElementById('addCeiling').checked) addOns += 3800;
+  if (document.getElementById('addDoors').checked) addOns += 4800;
+
+  let total = baseCost + addOns;
+  let lo = Math.round((total * 0.9) / 100) * 100;
+  let hi = Math.round((total * 1.1) / 100) * 100;
+
+  const costStr = '\u20B9' + lo.toLocaleString('en-IN') + ' - \u20B9' + hi.toLocaleString('en-IN');
+  document.getElementById('finalCostRange').textContent = costStr;
+
+  const waMsg = encodeURIComponent(
+    '🎨 *MAHANAND PAINTERS - INSTANT QUOTE CALCULATION*\n\n' +
+    '📐 *Carpet Area:* ' + currentArea + ' sq ft\n' +
+    '✨ *Selected Finish:* ' + currentFinishName + '\n' +
+    '💰 *Estimated Cost Range:* ' + costStr + '\n\n' +
+    'Hi! I calculated this estimate on your website. Please schedule a free site inspection for my home.'
+  );
+  document.getElementById('whatsappQuoteBtn').href = 'https://api.whatsapp.com/send?phone=919769158622?text=' + waMsg;
+}
+calculateCost();
+
+// Before & After Interactive Slider
+const baBox = document.getElementById('baBox');
+const baBefore = document.getElementById('baBefore');
+const baHandle = document.getElementById('baHandle');
+
+let isDragging = false;
+function updateBaSlider(clientX) {
+  const rect = baBox.getBoundingClientRect();
+  let x = clientX - rect.left;
+  if (x < 0) x = 0;
+  if (x > rect.width) x = rect.width;
+  const pct = (x / rect.width) * 100;
+  baBefore.style.width = pct + '%';
+  baHandle.style.left = pct + '%';
+}
+
+baBox.addEventListener('mousedown', (e) => { isDragging = true; updateBaSlider(e.clientX); });
+window.addEventListener('mouseup', () => { isDragging = false; });
+window.addEventListener('mousemove', (e) => { if (isDragging) updateBaSlider(e.clientX); });
+
+baBox.addEventListener('touchstart', (e) => { isDragging = true; updateBaSlider(e.touches[0].clientX); });
+window.addEventListener('touchend', () => { isDragging = false; });
+window.addEventListener('touchmove', (e) => { if (isDragging) updateBaSlider(e.touches[0].clientX); });
+
+// FAQ Accordion
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-answer');
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('active');
+    i.querySelector('.faq-answer').style.maxHeight = null;
+  });
+  if (!isActive) {
+    item.classList.add('active');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Modal Handlers
+function openBookingModal() {
+  document.getElementById('bookingModal').classList.add('active');
+  const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+  document.getElementById('modalDate').value = tomorrow;
+}
+
+function openBookingModalWithCost() {
+  openBookingModal();
+  const cost = document.getElementById('finalCostRange').textContent;
+  document.getElementById('modalSubtitle').textContent = 'Your estimated quote (' + cost + ') is locked. Pick your visit date:';
+}
+
+function closeBookingModal() {
+  document.getElementById('bookingModal').classList.remove('active');
+}
+
+function handleHeroBooking(e) {
+  e.preventDefault();
+  const name = document.getElementById('heroName').value.trim();
+  const phone = document.getElementById('heroPhone').value.trim();
+  const city = document.getElementById('heroCity').value;
+  const property = document.getElementById('heroProperty').value;
+
+  if (!name || !phone) {
+    alert('Please enter your Name and Phone Number.');
+    return;
+  }
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.hero-submit-btn');
+  if (submitBtn) {
+    submitBtn.innerHTML = '<svg style="animation:spin 1s linear infinite; width:18px; height:18px; display:inline-block; vertical-align:middle; margin-right:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg> Sending to WhatsApp...';
+    submitBtn.style.pointerEvents = 'none';
+  }
+
+  const waMsg = 
+    '🏡 *NEW SITE INSPECTION BOOKING - MAHANAND PAINTERS*\n\n' +
+    '👤 *Customer Name:* ' + name + '\n' +
+    '📱 *Phone Number:* +91 ' + phone + '\n' +
+    '📍 *City / Area:* ' + city + '\n' +
+    '🏢 *Property / Scope:* ' + property + '\n\n' +
+    'Please contact me to confirm the site inspection schedule!';
+
+  const waUrl = 'https://api.whatsapp.com/send?phone=919769158622&text=' + encodeURIComponent(waMsg);
+
+  // Instant direct navigation - 100% reliable on mobile and desktop without popup blockers
+  const newWin = window.open(waUrl, '_blank');
+  if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+    window.location.href = waUrl;
+  }
+}
+
+function handleModalSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('modalName').value.trim();
+  const phone = document.getElementById('modalPhone').value.trim();
+  const city = document.getElementById('modalCity').value;
+  const date = document.getElementById('modalDate').value;
+  const estQuote = document.getElementById('finalCostRange') ? document.getElementById('finalCostRange').textContent : 'N/A';
+
+  if (!name || !phone) {
+    alert('Please enter your Name and Phone Number.');
+    return;
+  }
+
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.btn-book-submit');
+  if (submitBtn) {
+    submitBtn.innerHTML = '<svg style="animation:spin 1s linear infinite; width:18px; height:18px; display:inline-block; vertical-align:middle; margin-right:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg> Sending to WhatsApp...';
+    submitBtn.style.pointerEvents = 'none';
+  }
+
+  const waMsg = 
+    '🎨 *FREE SITE INSPECTION REQUEST - MAHANAND PAINTERS*\n\n' +
+    '👤 *Customer Name:* ' + name + '\n' +
+    '📱 *Phone Number:* +91 ' + phone + '\n' +
+    '📍 *City / Area:* ' + city + '\n' +
+    '📅 *Preferred Visit Date:* ' + date + '\n' +
+    '💰 *Estimated Quote Range:* ' + estQuote + '\n\n' +
+    'Please confirm my inspection appointment!';
+
+  const waUrl = 'https://api.whatsapp.com/send?phone=919769158622&text=' + encodeURIComponent(waMsg);
+
+  setTimeout(() => {
+    closeBookingModal();
+  }, 600);
+
+  // Instant direct navigation
+  const newWin = window.open(waUrl, '_blank');
+  if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+    window.location.href = waUrl;
+  }
+}
+
+// Mobile Navigation Drawer Handlers
+function openMobileDrawer() {
+  document.getElementById('mobileDrawer').classList.add('active');
+  document.getElementById('mobileDrawerOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileDrawer() {
+  document.getElementById('mobileDrawer').classList.remove('active');
+  document.getElementById('mobileDrawerOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+</script>
+
+<!-- LUXURY MOBILE DRAWER NAVIGATION -->
+<div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileDrawer()"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-header">
+    <a href="#" class="brand-logo-wrap" onclick="closeMobileDrawer()">
+      <img src="mahanand-logo-trans.png" alt="Mahanand Painters" class="brand-logo-img" style="height:46px;">
+    </a>
+    <button type="button" class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close Navigation">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="mobile-drawer-body">
+    <div class="mobile-drawer-tagline">
+      <span>Architectural &bull; Sage Green &amp; Ivory Atelier</span>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#services" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Painting Services</span></a></li>
+      <li><a href="#brands" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Certified Paint Brands</span></a></li>
+      <li><a href="#floral-palette" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/></svg><span>10-Shade Floral Studio</span></a></li>
+      <li><a href="#calculator" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="14"/></svg><span>Paint Cost Calculator</span></a></li>
+      <li><a href="#visualizer" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg><span>Room Color Studio</span></a></li>
+      <li><a href="#transformations" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" x2="21" y1="20" y2="3"/><polyline points="21 16 21 21 16 21"/></svg><span>Before &amp; After</span></a></li>
+      <li><a href="#process" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>How It Works</span></a></li>
+      <li><a href="#reviews" onclick="closeMobileDrawer()"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Verified Reviews</span></a></li>
+    </ul>
+
+    <div class="mobile-drawer-cta">
+      <a href="tel:+919769158622" class="mobile-cta-phone">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call: +91 97691 58622</span>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20would%20like%20to%20get%20a%20free%20quote." class="mobile-cta-wa" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+        <span>Chat on WhatsApp</span>
+      </a>
+      <button type="button" class="btn-primary" onclick="closeMobileDrawer(); openBookingModal();" style="width:100%; height:48px;">
+        <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Book Free Site Visit
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY MOBILE CONVERSION BAR -->
+<div class="mobile-sticky-bar">
+  <a href="tel:+919769158622" class="sticky-bar-btn sticky-call">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Call</span>
+  </a>
+  <a href="https://api.whatsapp.com/send?phone=919769158622&text=Hi%20Mahanand%20Painters,%20I%20would%20like%20to%20get%20a%20free%20quote." class="sticky-bar-btn sticky-wa" target="_blank">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <button type="button" class="sticky-bar-btn sticky-book" onclick="openBookingModal()">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+    <span>Book Visit</span>
+  </button>
+</div>
+
+</body>
+</html>
